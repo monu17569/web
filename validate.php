@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 		
 		if(($admin['adminname'] == $adminname) &&
 			($admin['password'] == $password)) {
-				header("Location: dashboard.php");
+				header("Location: ./dashboard.php");
 		}
 		else 
     {
