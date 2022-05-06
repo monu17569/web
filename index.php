@@ -40,7 +40,7 @@
                 Qualification
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#degree" ....>Degree</a></li>
+                <li><a class="dropdown-item" href="#degree">Degree</a></li>
               </ul>
             </li>
           </ul>
@@ -52,11 +52,11 @@
                 Research
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Journal(Indexing in SCI)</a></li>
-                <a class="dropdown-item" href="#">Journal (Indexing in SCOPUS)</a></li>
-                <a class="dropdown-item" href="#">Journal Referred</a></li>
-                <li><a class="dropdown-item" href="#">Book Chapter</a></li>
-                <li><a class="dropdown-item" href="#">Conference</a></li>
+                <li><a class="dropdown-item" href="#indexingatsci">Journal(Indexing in SCI)</a></li>
+                <a class="dropdown-item" href="#indexingatscopus">Journal (Indexing in SCOPUS)</a></li>
+                <a class="dropdown-item" href="#referred">Journal Referred</a></li>
+                <li><a class="dropdown-item" href="#bookchapter">Book Chapter</a></li>
+                <li><a class="dropdown-item" href="#conference">Conference</a></li>
               </ul>
             </li>
           </ul>
@@ -68,8 +68,8 @@
                 Teaching
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Subject Expertise</a></li>
-                <li><a class="dropdown-item" href="#">Experience</a></li>
+                <li><a class="dropdown-item" href="#subjectexpertise">Subject Expertise</a></li>
+                <li><a class="dropdown-item" href="#experience">Experience</a></li>
               </ul>
             </li>
           </ul>
@@ -81,8 +81,8 @@
               Recognition
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Awards/Fellowship/Grants</a></li>
-                <li><a class="dropdown-item" href="#">Workshop</a></li>
+                <li><a class="dropdown-item" href="#awards">Awards/Fellowship/Grants</a></li>
+                <li><a class="dropdown-item" href="#workshop">Workshop</a></li>
               </ul>
             </li>
           </ul>
@@ -114,10 +114,10 @@
 
 
 
-    <!-- <h2>2. Qualification  2.1 Degree</h2> -->
-    <!-- <?php 
-        // include('./dynamic/degree.php');
-    // ?>
+    <h2>2. Qualification  2.1 Degree</h2>
+    <?php 
+        include('./dynamic/degree.php');
+    ?>
      <h4>Below Degree</h4> -->
     
     <h2>3. Research   </h2>

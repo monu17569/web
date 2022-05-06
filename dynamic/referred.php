@@ -26,7 +26,7 @@ if (!$conn){
  <title></title>
 </head>
 <body>
-   <div class="container my-5">
+   <div class="container my-5" id="referred">
      <table class="table" id="myTable">
        <caption></caption>
        <thead>
