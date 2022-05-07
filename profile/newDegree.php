@@ -1,7 +1,6 @@
-
 <?php
 
-// $insert = false; 
+$insert = false; 
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -21,17 +20,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $endDate = $_POST["ed"];
 
 
-  //Sql query to be executed
-  // $sql = "INSERT INTO `degree`(`courseName`, `universityName`, `startDate`, `endDate`) VALUES ('$courseName','$universityName','$startDate','$endDate')";
-  // $result = mysqli_query($conn, $sql);
-
-  // if($result){
-  //   // echo "THe record has been inserted sucessfully";
-  //   // $insert = true;
-  // }
-  // else{
-  //   echo "The record was not inserted successfully because of this error ---->". mysqli_error($conn);
-  // }
+  $sql1 = "SELECT  FROM `degree` WHERE (`courseName`==='$courseName', `universityName`==='$universityName', `startDate`==='$startDate', `endDate`==='$endDate')";
+  $result1 = mysqli_query($conn, $sql1);
+  echo var_dump($result1);
+  if(!$result1)
+  {
+    //Sql query to be executed
+    $sql = "INSERT INTO `degree`(`courseName`, `universityName`, `startDate`, `endDate`) VALUES ('$courseName','$universityName','$startDate','$endDate')";
+    $result = mysqli_query($conn, $sql);
+    if($result){
+      // echo "THe record has been inserted sucessfully";
+      $insert = true;
+    }
+    else{
+      echo "The record was not inserted successfully because of this error ---->". mysqli_error($conn);
+    }
+  }else{
+    echo "This record already existing in database.  ". mysqli_error($conn);
+  }
 }
 
 ?>
@@ -51,23 +57,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
       <!-- Nav bar starts -->
     <div class="alert alert-primary my-2" role="alert">
-      <h2>Degree Dashboard</h2>
+      <h2>Edit Your Degree </h2>
     </div>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
-     <!-- <?php 
+     <?php 
       if($insert){
         echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
         <strong>Success!</strong> Your data has been inserted successfully.
         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       </div>";
       }
-    ?> -->
+    ?>
 
     <!-- form to edit starts -->
-    <!-- <div class="container my-4">
+    <div class="container my-4">
         <h3>Edit your Info</h3>
-        <form action="./degree.php" method="post">
+        <form action="./newDegree.php" method="post">
           <div class="mb-3">
             <label for="courseName" class="form-label"> <h5>Course Name</h5></label>
             <input type="text" class="form-control" id="coursename" name="coursename" required >
@@ -89,52 +95,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </div> 
           <button type="submit" class="btn btn-primary">Submit Info</button>
       </form>
-    </div> -->
+    </div>
+
     <!-- Form to edit ends -->
-
-     <div class="container my-5">
-     <button type="button" class="btn btn-dark"><a href="./newDegree.php"><h4>Add New</h4></a></button>
-     </div>
-   <div class="container my-5" id="degree" >
-      <table class="table" id="myTable">
-        <caption></caption>
-        <thead>
-              <tr>
-                <th scope="col">Sl.No.</th>
-                <th scope="col">Course Name</th>
-                <th scope="col">University Name</th>
-                <th scope="col">Start Date</th>
-                <th scope="col">End Date</th>
-              </tr>
-        </thead>
-              <tbody>
-                      <?php
-                        $sql = "SELECT * FROM `degree`";
-                        $result = mysqli_query($conn, $sql);
-                        $sno=0;
-                        while($row = mysqli_fetch_assoc($result)){
-                          $sno=$sno+1; 
-                            //echo "var_dump($row);
-                          // echo $sno. "CourseName".$row['courseName']." UniversityName". $row['universityName']."StartDate".$row['startDate']."EndDate".$row['endDate'];
-                          // echo "<br>";
-                          echo "<tr>
-                                <th scope='row'>".$sno."</th>
-                                <td>".$row['courseName']."</td>
-                                <td>".$row['universityName']."</td>
-                                <td>".$row['startDate']."</td>
-                                <td>".$row['endDate']."</td>
-                                <td><button type='button' class='btn btn-success'>Update</button></td>
-                                <td><button type='button' class='btn btn-danger'>Delete</button></td>
-                                </tr>";
-                          //  echo '<button type="button" class="btn btn-success">Success</button>';
-
-                        } 
-                      ?>
-              </tbody>
-      </table>     
-   </div>
-
-   <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

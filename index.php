@@ -117,7 +117,7 @@
     <?php 
         include('./dynamic/degree.php');
     ?>
-     <h4>Below Degree</h4> -->
+     <h4>Below Degree</h4> 
     
     <h2>3. Research   </h2>
     <?php
