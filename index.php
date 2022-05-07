@@ -101,17 +101,29 @@
       </div>
     </nav>
     <!-- Navigation menu ends -->
-    <div class="container">
-    <img src="./img/img1.png" class="rounded-circle" alt="Image">
-    </div>
 
 
+<!-- HOMEPAGE INFO BY ROHIT -->
+<div class="container py-4">
+  <div class="row align-items-md-stretch">
+      <div class="col-md-4">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <a href="#">
+            <img src="./img/img1.png" alt="Image">
+          </a>  
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Sir Ka Name</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, amet suscipit. Cupiditate suscipit animi repellat quia tempora expedita earum ratione porro assumenda optio a, nulla distinctio nemo est ad perspiciatis.</p>
+        </div>
+      </div>
+      
+  </div>
+</div>
 
-
-
-
-
-
+<!-- END OF HOMEPAGE INFO BY ROHIT -->
 
     <h2>2. Qualification  2.1 Degree</h2>
     <?php 

@@ -1,5 +1,5 @@
 <?php
-
+$duplicate = false;
 $insert = false; 
 $servername = "localhost";
 $username = "root";
@@ -19,24 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $startDate = $_POST["sd"];
   $endDate = $_POST["ed"];
 
-
-  $sql1 = "SELECT  FROM `degree` WHERE (`courseName`==='$courseName', `universityName`==='$universityName', `startDate`==='$startDate', `endDate`==='$endDate')";
-  $result1 = mysqli_query($conn, $sql1);
-  echo var_dump($result1);
-  if(!$result1)
+    //  duplicate value check
+  $dup = mysqli_query($conn,"SELECT * FROM degree WHERE courseName='$courseName'");
+  if(mysqli_num_rows($dup)>0)
   {
+    //echo "This record already existing in database.  ". mysqli_error($conn);
+    $duplicate =true;
+  }else{
     //Sql query to be executed
-    $sql = "INSERT INTO `degree`(`courseName`, `universityName`, `startDate`, `endDate`) VALUES ('$courseName','$universityName','$startDate','$endDate')";
+    $sql = "INSERT INTO degree (courseName, universityName, startDate, endDate) VALUES ('$courseName','$universityName','$startDate','$endDate')";
     $result = mysqli_query($conn, $sql);
+    
     if($result){
-      // echo "THe record has been inserted sucessfully";
       $insert = true;
     }
     else{
       echo "The record was not inserted successfully because of this error ---->". mysqli_error($conn);
     }
-  }else{
-    echo "This record already existing in database.  ". mysqli_error($conn);
   }
 }
 
@@ -64,12 +63,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      <?php 
       if($insert){
         echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-        <strong>Success!</strong> Your data has been inserted successfully.
-        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-      </div>";
+        <strong>Success!</strong> Your data has been inserted successfully.";
+        echo "<a href='./newDegree.php'>";
+        echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+      </div></a>";
+      }
+      if($duplicate){
+        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+        <strong>Warning!</strong> Duplicate entry not allowed.";
+        echo "<a href='./newDegree.php'>";
+        echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+      </div></a>";
+      
       }
     ?>
-
     <!-- form to edit starts -->
     <div class="container my-4">
         <h3>Edit your Info</h3>
@@ -93,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="endDate" class="form-label"><h5>End Date</h5></label>
             <input type="date" class="form-control" id="ed" name="ed" required>
           </div> 
-          <button type="submit" class="btn btn-primary">Submit Info</button>
+          <button type="submit" class="btn btn-primary my-3">Submit Info</button>
       </form>
     </div>
 
