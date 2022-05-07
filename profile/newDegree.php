@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="endDate" class="form-label"><h5>End Date</h5></label>
             <input type="date" class="form-control" id="ed" name="ed" required>
           </div> 
-          <button type="submit" class="btn btn-primary my-3">Submit Info</button>
+          <button type="submit" class="btn btn-primary my-3"><h5>Submit Info</h5></button>
       </form>
     </div>
 

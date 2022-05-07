@@ -17,80 +17,81 @@
     <div class="container">
         <div class="row my-5">
           <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
             <a href="./profile/degree.php">
-                <div class="card-header"><h4>Degree</h4></div>
-            </a> 
-            </div>
+              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header"><h4>Degree</h4></div> 
+              </div>
+            </a>
           </div>
           <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <a href="./profile/sci.php">
-                  <div class="card-header"><h4>SCI</h4></div>
-                </a> 
-            </div>
+              <a href="./profile/sci.php">
+                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                  <div class="card-header"><h4>SCI</h4></div> 
+                </div>
+              </a>
           </div>
           <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <a href="./profile/scopus.php">
+          <a href="./profile/scopus.php">
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                
                   <div class="card-header"><h4>SCOPUS</h4></div>
-                </a>
-            </div>            
+                
+            </div></a>            
           </div>
         </div>
 
         <div class="row my-5">
-          <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <a href="./profile/referred.php">
+          <div class="col-lg"><a href="./profile/referred.php">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                
                   <div class="card-header"><h4>Referred</h4></div>
-                </a>
-            </div>
+                
+            </div></a>
           </div>
-          <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <a href="./profile/bookchapter.php">
+          <div class="col-lg"><a href="./profile/bookchapter.php">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                
                   <div class="card-header"><h4>Book Chapter</h4></div>
-                </a>
-            </div>
+                
+            </div></a>
           </div>
-          <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-            <a href="./profile/conference.php">
+          <div class="col-lg"><a href="./profile/conference.php">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            
               <div class="card-header"><h4>Conference</h4></div>
-            </div>
+            </div></a>
           </div>
         </div> 
         <div class="row my-5">
-          <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-              <a href="./profile/expertise.php">
+          <div class="col-lg"><a href="./profile/expertise.php">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+              
                 <div class="card-header"><h4>Expertise</h4></div>
-              </a>
-            </div>
+              
+            </div></a>
           </div>
-          <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <a href="./profile/experience.php">
+          <div class="col-lg"><a href="./profile/experience.php">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                
                   <div class="card-header"><h4>Experience</h4></div>
-                </a>
-            </div>
+               
+            </div> </a>
           </div>
-          <div class="col-lg">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                <a href="./profile/awards.php">
+          <div class="col-lg"><a href="./profile/awards.php">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                
                   <div class="card-header"><h4><h4>Awards</h4></h4></div>
-                </a>
-            </div>
+                
+            </div></a>
           </div>
         </div>
       <div class="row my-5">
-        <div class="col-lg">
-          <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-              <a href="./profile/workshop.php">  
+        <div class="col-lg"><a href="./profile/workshop.php">
+          <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                
                   <div class="card-header"><h4>Workshop</h4></div>
-              </a>
-          </div>
+              
+          </div></a>
         </div>
       </div>  
     </div>

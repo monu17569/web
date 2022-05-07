@@ -47,8 +47,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  
   
  <title></title>
+ 
 </head>
+
 <body>
+          <!-- Edit modal -->
+          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+            Edit Modal
+          </button> -->
+
+          <!-- Modal -->
+          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
       <!-- Nav bar starts -->
     <div class="alert alert-primary my-2" role="alert">
       <h2>Degree Dashboard</h2>
@@ -93,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Form to edit ends -->
 
      <div class="container my-5">
-     <button type="button" class="btn btn-dark"><a href="./newDegree.php"><h4>Add New</h4></a></button>
+     <a href="./newDegree.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
      </div>
    <div class="container my-5" id="degree" >
       <table class="table" id="myTable">
@@ -123,8 +150,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <td>".$row['universityName']."</td>
                                 <td>".$row['startDate']."</td>
                                 <td>".$row['endDate']."</td>
-                                <td><button type='button' class='btn btn-success'>Update</button></td>
-                                <td><button type='button' class='btn btn-danger'>Delete</button></td>
+                                <td><button type='button' class='edit btn btn-success'>Update</button></td>
+                                <td><button type='button' class='delete btn btn-danger'>Delete</button></td>
                                 </tr>";
                           //  echo '<button type="button" class="btn btn-success">Success</button>';
 
@@ -135,6 +162,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    </div>
 
    <!-- Optional JavaScript; choose one of the two! -->
+   <script>
+   edits = document.getElementsByClassName('edit');
+   Array.from(edits).forEach((element) =>{
+     element.addEventListener("click",(e) =>{
+       console.log("edit",e.target.parentNode.parentNode);
+     })
+   })
+ </script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
