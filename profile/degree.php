@@ -1,15 +1,11 @@
-
 <?php
-
-
-// $insert = false;
 $update = false;
 $delete = false;
 // Connect to the Database
 $servername = "localhost";
- $username = "id18903059_useradmin";
- $password = "=M(qUHEVt\7VMiU{";
- $database = "id18903059_poftfolio";
+$username = "root";
+$password = "";
+$database = "portfolio";
 
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
@@ -26,7 +22,7 @@ if(isset($_GET['delete'])){
   $result = mysqli_query($conn, $sql);
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset( $_POST['idEdit'])){
     // Update the record
       $id = $_POST['idEdit'];
@@ -36,51 +32,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $endDate = $_POST["edEdit"];
 
 
-      // Sql query to be executed
-        $sql = "UPDATE `degree` SET `courseName` = '$courseName' , `universityName` = '$universityName',`startDate` = '$startDate' ,`endDate` = '$endDate' WHERE `degree`.`id` = $id";
-        $result = mysqli_query($conn, $sql);
-        if($result){
-          $update = true;
-        }
-        else{
-            echo "We could not update the record successfully";
-        }
+    // Sql query to be executed
+      $sql = "UPDATE `degree` SET `courseName` = '$courseName' , `universityName` = '$universityName',`startDate` = '$startDate' ,`endDate` = '$endDate' WHERE `degree`.`id` = $id";
+      $result = mysqli_query($conn, $sql);
+      if($result){
+        $update = true;
       }
-
-      // else{
-      //       $courseName = $_POST["courseName"];
-      //       $universityName = $_POST["universityName"];
-      //       $startDate = $_POST["startDate"];
-      //       $endDate = $_POST["endDate"];
-      //       // Sql query to be executed
-      //       $sql = "INSERT INTO degree (courseName, universityName, startDate, endDate) VALUES ('$courseName','$universityName','$startDate','$endDate')";
-      //       $result = mysqli_query($conn, $sql);
-
-      //       if($result){ 
-      //           $insert = true;
-      //       }
-      //       else{
-      //           echo "The record was not inserted successfully because of this error ---> ". mysqli_error($conn);
-      //       } 
-      //     }
-        }
-
-
-
-
-   //Sql query to be executed
-  // $sql = "INSERT INTO `degree`(`courseName`, `universityName`, `startDate`, `endDate`) VALUES ('$courseName','$universityName','$startDate','$endDate')";
-  // $result = mysqli_query($conn, $sql);
-
-  // if($result){
-  //   // echo "THe record has been inserted sucessfully";
-  //   // $insert = true;
-  // }
-  // else{
-  //   echo "The record was not inserted successfully because of this error ". mysqli_error($conn);
-  // } -->
-
-?>
+      else{
+          echo "We could not update the record successfully";
+      }
+      }} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -149,14 +110,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </a>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
-      <!-- <?php 
-          if($insert){
-            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-            <strong>Success!</strong> Your data has been inserted successfully.";
-            echo "<a href='./degree.php'>";
-            echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-          </div></a>";
-          } ?> -->
       <?php if($delete){
             echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
             <strong>Warning!</strong> Your data has been deleted successfully.";
@@ -224,9 +177,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $sno=0;
                         while($row = mysqli_fetch_assoc($result)){
                           $sno=$sno+1; 
-                            //echo "var_dump($row);
-                          // echo $sno. "CourseName".$row['courseName']." UniversityName". $row['universityName']."StartDate".$row['startDate']."EndDate".$row['endDate'];
-                          // echo "<br>";
                           echo "<tr>
                                 <th scope='row'>".$sno."</th>
                                 <td>".$row['courseName']."</td>
@@ -236,7 +186,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <td><button type='button' class='edit btn btn-success' id=".$row['id'].">Update</button></td>
                                 <td><button type='button' class='delete btn btn-danger' id=d".$row['id'].">Delete</button></td>
                                 </tr>";
-                                //  echo '<button type="button" class="btn btn-success">Success</button>';
                         } 
                       ?>
               </tbody>
@@ -246,19 +195,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-  <!-- <script>
-    $(document).ready(function () {
-      $('#myTable').DataTable();
-
-    });
-  </script> -->
 
    <!-- Optional JavaScript; choose one of the two! -->
   <script>
@@ -291,7 +227,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (confirm("Are you sure you want to delete !")) {
           console.log("yes");
           window.location = `./degree.php?delete=${id}`;
-          // TODO: Create a form and use post request to submit a form
         }
         else {
           console.log("no");
@@ -307,15 +242,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-   
-
-    <!-- for Pagination -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script>
-      $(document).ready( function () {
-       $('#myTable').DataTable();
-        } );
-    </script> -->
 </body>
 </html>
