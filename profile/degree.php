@@ -1,7 +1,11 @@
 
 <?php
 
-// $insert = false; 
+
+// $insert = false;
+$update = false;
+$delete = false;
+// Connect to the Database
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,14 +18,57 @@ $conn = mysqli_connect($servername,$username,$password,$database);
 if (!$conn){ 
   die("Sorry we failed to connect :" .mysqli_connect_error());
 }
+
+if(isset($_GET['delete'])){
+  $id = $_GET['delete'];
+  $delete = true;
+  $sql = "DELETE FROM `degree` WHERE `id` = $id";
+  $result = mysqli_query($conn, $sql);
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $courseName = $_POST["coursename"];
-  $universityName = $_POST["uname"];
-  $startDate = $_POST["sd"];
-  $endDate = $_POST["ed"];
+  if (isset( $_POST['idEdit'])){
+    // Update the record
+      $id = $_POST['idEdit'];
+      $courseName = $_POST["coursenameEdit"];
+      $universityName = $_POST["unameEdit"];
+      $startDate = $_POST["sdEdit"];
+      $endDate = $_POST["edEdit"];
 
 
-  //Sql query to be executed
+      // Sql query to be executed
+        $sql = "UPDATE `degree` SET `courseName` = '$courseName' , `universityName` = '$universityName',`startDate` = '$startDate' ,`endDate` = '$endDate' WHERE `degree`.`id` = $id";
+        $result = mysqli_query($conn, $sql);
+        if($result){
+          $update = true;
+        }
+        else{
+            echo "We could not update the record successfully";
+        }
+      }
+
+      // else{
+      //       $courseName = $_POST["courseName"];
+      //       $universityName = $_POST["universityName"];
+      //       $startDate = $_POST["startDate"];
+      //       $endDate = $_POST["endDate"];
+      //       // Sql query to be executed
+      //       $sql = "INSERT INTO degree (courseName, universityName, startDate, endDate) VALUES ('$courseName','$universityName','$startDate','$endDate')";
+      //       $result = mysqli_query($conn, $sql);
+
+      //       if($result){ 
+      //           $insert = true;
+      //       }
+      //       else{
+      //           echo "The record was not inserted successfully because of this error ---> ". mysqli_error($conn);
+      //       } 
+      //     }
+        }
+
+
+
+
+   //Sql query to be executed
   // $sql = "INSERT INTO `degree`(`courseName`, `universityName`, `startDate`, `endDate`) VALUES ('$courseName','$universityName','$startDate','$endDate')";
   // $result = mysqli_query($conn, $sql);
 
@@ -30,11 +77,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   //   // $insert = true;
   // }
   // else{
-  //   echo "The record was not inserted successfully because of this error ---->". mysqli_error($conn);
-  // }
-}
+  //   echo "The record was not inserted successfully because of this error ". mysqli_error($conn);
+  // } -->
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,64 +99,79 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
           <!-- Edit modal -->
-          <!-- Modal -->
           <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="editModalLabel">Edit this Degree</h5>
+                  <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="./degree.php" method="post">
-                <div class="modal-body">
+                  <div class="modal-body">
                   
-                    <input type="hidden" name="snoEdit" id="snoEdit">
+                    <input type="hidden" name="idEdit" id="idEdit">
 
-                    <div class="mb-3">
-                      <label for="courseName" class="form-label"> <h5>Course Name</h5></label>
-                      <input type="text" class="form-control" id="coursename" name="coursenameEdit" required >
+                    <div class="form-group"> 
+                      <label for="courseName" > <h5>Course Name</h5></label>
+                      <input type="text" class="form-control" id="coursenameEdit" name="coursenameEdit" required >
                     </div>
           
-                    <div class="mb-3">
-                      <label for="universityName" class="form-label"> <h5>University Name</h5></label>
-                      <input type="text" class="form-control" id="uname" name="unameEdit" required>
+                    <div class="form-group">
+                      <label for="universityName" > <h5>University Name</h5></label>
+                      <input type="text" class="form-control" id="unameEdit" name="unameEdit" required>
                     </div>
           
-                    <div class="mb-3">
-                      <label for="startDate" class="form-label"><h5>Start Date</h5></label>
-                      <input type="date" class="form-control"  id="sd" name="sdEdit" required >
+                    <div class="form-group">
+                      <label for="startDate" ><h5>Start Date</h5></label>
+                      <input type="date" class="form-control"  id="sdEdit" name="sdEdit" required >
                     </div>
           
-                    <div class="mb-3">
-                      <label for="endDate" class="form-label"><h5>End Date</h5></label>
-                      <input type="date" class="form-control" id="ed" name="edEdit" required>
-                    </div> 
-                    <button type="submit" class="btn btn-primary">Submit Info</button>
-                  
-                </div></form>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="form-group">
+                      <label for="endDate" ><h5>End Date</h5></label>
+                      <input type="date" class="form-control" id="edEdit" name="edEdit" required>
+                    </div>                   
+                  </div>
+                  <div class="modal-footer d-block mr-auto">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
 
 
       <!-- Nav bar starts -->
-    <div class="alert alert-primary my-2" role="alert">
-      <h2>Degree Dashboard</h2>
-    </div>
+    <a href="../dashboard.php" style="text-decoration: none;">
+      <div class="alert alert-primary my-2" role="alert">
+          <h2>Degree Dashboard</h2>
+      </div>
+    </a>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
-     <!-- <?php 
-      if($insert){
-        echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-        <strong>Success!</strong> Your data has been inserted successfully.
-        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-      </div>";
-      }
-    ?> -->
+      <!-- <?php 
+          if($insert){
+            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>Success!</strong> Your data has been inserted successfully.";
+            echo "<a href='./degree.php'>";
+            echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div></a>";
+          } ?> -->
+      <?php if($delete){
+            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+            <strong>Warning!</strong> Your data has been deleted successfully.";
+            echo "<a href='./degree.php'>";
+            echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div></a>"; 
+          } ?>
+        <?php if($update){
+            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>Success!</strong> Your data has been updated successfully.";
+            echo "<a href='./degree.php'>";
+            echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div></a>";
+          } ?>
+      
 
     <!-- form to edit starts -->
     <!-- <div class="container my-4">
@@ -142,6 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      <div class="container my-5">
      <a href="./newDegree.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
      </div>
+
    <div class="container my-5" id="degree" >
       <table class="table" id="myTable">
         <caption></caption>
@@ -149,7 +212,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <tr>
                 <th scope="col">Sl.No.</th>
                 <th scope="col">Course Name</th>
-                <th scope="col">University Name</th>
+                <th scope="col">University monu</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
               </tr>
@@ -171,15 +234,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <td>".$row['startDate']."</td>
                                 <td>".$row['endDate']."</td>
                                 <td><button type='button' class='edit btn btn-success' id=".$row['id'].">Update</button></td>
-                                <td><button type='button' class='delete btn btn-danger'>Delete</button></td>
+                                <td><button type='button' class='delete btn btn-danger' id=d".$row['id'].">Delete</button></td>
                                 </tr>";
-                          //  echo '<button type="button" class="btn btn-success">Success</button>';
-
+                                //  echo '<button type="button" class="btn btn-success">Success</button>';
                         } 
                       ?>
               </tbody>
       </table>     
    </div>
+
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <!-- <script>
+    $(document).ready(function () {
+      $('#myTable').DataTable();
+
+    });
+  </script> -->
 
    <!-- Optional JavaScript; choose one of the two! -->
   <script>
@@ -197,21 +276,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        unameEdit.value = universityName;
        sdEdit.value = startDate;
        edEdit.value = endDate;
-       snoEdit.value = e.target.id;
+       idEdit.value = e.target.id;
        console.log(e.target.id);
        $('#editModal').modal('toggle');
      })
    })
+
+   deletes = document.getElementsByClassName('delete');
+    Array.from(deletes).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        id = e.target.id.substr(1);
+
+        if (confirm("Are you sure you want to delete !")) {
+          console.log("yes");
+          window.location = `./degree.php?delete=${id}`;
+          // TODO: Create a form and use post request to submit a form
+        }
+        else {
+          console.log("no");
+        }
+      })
+    })
  </script> 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+   
 
     <!-- for Pagination -->
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
