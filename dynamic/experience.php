@@ -51,7 +51,7 @@ if (!$conn){
                               <td> <?php echo $row['universityName']; ?> </td>
                               <td> <?php echo $row['designation']; ?> </td>
                               <td> <?php 
-                                      $list_items = explode("\n", $row['description']);
+                                      $list_items = explode("\n", $row['Disc']);
                                         echo '<ul>';
                                                     foreach($list_items as $list_item)
                                                     if(!empty($list_items)){

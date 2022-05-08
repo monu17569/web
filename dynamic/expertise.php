@@ -45,8 +45,8 @@ if (!$conn){
                    $sno=$sno+1; 
                    echo "<tr>
                          <th scope='row'>".$sno."</th>
-                         <td>".$row['subject']."</td>
-                         <td>".$row['percantage']."</td>
+                         <td>".$row['subj']."</td>
+                         <td>".$row['perc']."</td>
                          </tr>";
 
                  } 

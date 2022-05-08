@@ -52,21 +52,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
           <!-- Edit modal -->
-          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-            Edit Modal
-          </button> -->
-
           <!-- Modal -->
           <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+                  <h5 class="modal-title" id="editModalLabel">Edit this Degree</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="./degree.php" method="post">
                 <div class="modal-body">
-                  ...
-                </div>
+                  
+                    <input type="hidden" name="snoEdit" id="snoEdit">
+
+                    <div class="mb-3">
+                      <label for="courseName" class="form-label"> <h5>Course Name</h5></label>
+                      <input type="text" class="form-control" id="coursename" name="coursenameEdit" required >
+                    </div>
+          
+                    <div class="mb-3">
+                      <label for="universityName" class="form-label"> <h5>University Name</h5></label>
+                      <input type="text" class="form-control" id="uname" name="unameEdit" required>
+                    </div>
+          
+                    <div class="mb-3">
+                      <label for="startDate" class="form-label"><h5>Start Date</h5></label>
+                      <input type="date" class="form-control"  id="sd" name="sdEdit" required >
+                    </div>
+          
+                    <div class="mb-3">
+                      <label for="endDate" class="form-label"><h5>End Date</h5></label>
+                      <input type="date" class="form-control" id="ed" name="edEdit" required>
+                    </div> 
+                    <button type="submit" class="btn btn-primary">Submit Info</button>
+                  
+                </div></form>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Save changes</button>
@@ -150,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <td>".$row['universityName']."</td>
                                 <td>".$row['startDate']."</td>
                                 <td>".$row['endDate']."</td>
-                                <td><button type='button' class='edit btn btn-success'>Update</button></td>
+                                <td><button type='button' class='edit btn btn-success' id=".$row['id'].">Update</button></td>
                                 <td><button type='button' class='delete btn btn-danger'>Delete</button></td>
                                 </tr>";
                           //  echo '<button type="button" class="btn btn-success">Success</button>';
@@ -162,14 +182,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    </div>
 
    <!-- Optional JavaScript; choose one of the two! -->
-   <script>
+  <script>
    edits = document.getElementsByClassName('edit');
    Array.from(edits).forEach((element) =>{
      element.addEventListener("click",(e) =>{
-       console.log("edit",e.target.parentNode.parentNode);
+       console.log("edit");
+       tr = e.target.parentNode.parentNode;
+       courseName = tr.getElementsByTagName("td")[0].innerText;
+       universityName = tr.getElementsByTagName("td")[1].innerText;
+       startDate = tr.getElementsByTagName("td")[2].innerText;
+       endDate = tr.getElementsByTagName("td")[3].innerText;
+       console.log(courseName, universityName, startDate, endDate);
+       coursenameEdit.value = courseName;
+       unameEdit.value = universityName;
+       sdEdit.value = startDate;
+       edEdit.value = endDate;
+       snoEdit.value = e.target.id;
+       console.log(e.target.id);
+       $('#editModal').modal('toggle');
      })
    })
- </script>
+ </script> 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

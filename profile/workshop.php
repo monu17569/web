@@ -26,6 +26,20 @@ if (!$conn){
  <title></title>
 </head>
 <body>
+
+        <!-- Nav bar starts -->
+        <div class="alert alert-primary my-2" role="alert">
+          <h2>Workshop Dashboard</h2>
+        </div>
+          <!-- Nav bar ends -->
+
+        <div class="container my-5">
+        <a href="./newWorkshop.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
+        </div>
+
+
+
+
    <div class="container my-5" id="workshop">
      <table class="table" id="myTable">
        <caption></caption>
@@ -51,6 +65,8 @@ if (!$conn){
                          <td>".$row['topic']."</td>
                          <td>".$row['startDate']."</td>
                          <td>".$row['endDate']."</td>
+                         <td><button type='button' class='btn btn-success'>Update</button></td>
+                         <td><button type='button' class='delete btn btn-danger'>Delete</button></td>
                          </tr>";
                  } 
                ?>

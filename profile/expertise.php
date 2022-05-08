@@ -26,6 +26,16 @@ if (!$conn){
  <title></title>
 </head>
 <body>
+        <!-- Nav bar starts -->
+        <div class="alert alert-primary my-2" role="alert">
+          <h2>Subject Expertise Dashboard</h2>
+        </div>
+          <!-- Nav bar ends -->
+
+        <div class="container my-5">
+        <a href="./newExpertise.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
+        </div>
+
    <div class="container my-5" id="expertise">
      <table class="table" id="myTable">
        <caption></caption>
@@ -45,8 +55,10 @@ if (!$conn){
                    $sno=$sno+1; 
                    echo "<tr>
                          <th scope='row'>".$sno."</th>
-                         <td>".$row['subject']."</td>
-                         <td>".$row['percantage']."</td>
+                         <td>".$row['subj']."</td>
+                         <td>".$row['perc']."</td>
+                         <td><button type='button' class='btn btn-success'>Update</button></td>
+                         <td><button type='button' class='delete btn btn-danger'>Delete</button></td>
                          </tr>";
 
                  } 
