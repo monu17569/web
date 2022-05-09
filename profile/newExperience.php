@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $startDate = $_POST["sd"];
   $endDate = $_POST["ed"];
 
+  // echo $universityName,$designation,$description,$startDate,$endDate;
     //  duplicate value check
   $dup = mysqli_query($conn,"SELECT * FROM experience WHERE universityName='$universityName'");
   if(mysqli_num_rows($dup)>0)

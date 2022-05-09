@@ -72,22 +72,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                   
                     <input type="hidden" name="idEdit" id="idEdit">
 
-                    <div class="form-group"> 
+                    <div class="mb-3"> 
                       <label for="courseName" > <h5>Course Name</h5></label>
                       <input type="text" class="form-control" id="coursenameEdit" name="coursenameEdit" required >
                     </div>
           
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label for="universityName" > <h5>University Name</h5></label>
                       <input type="text" class="form-control" id="unameEdit" name="unameEdit" required>
                     </div>
           
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label for="startDate" ><h5>Start Date</h5></label>
                       <input type="date" class="form-control"  id="sdEdit" name="sdEdit" required >
                     </div>
           
-                    <div class="form-group">
+                    <div class="mb-3">
                       <label for="endDate" ><h5>End Date</h5></label>
                       <input type="date" class="form-control" id="edEdit" name="edEdit" required>
                     </div>                   
@@ -235,10 +235,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     })
  </script> 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <!--  Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html>

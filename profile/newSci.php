@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $duplicate =true;
   }else{
     //Sql query to be executed
-    $sql = "INSERT INTO indexingatsci (description , impactfactor) VALUES ('$description','$impactfactor')";
+    $sql = "INSERT INTO indexingatsci (Disc , impactfactor) VALUES ('$description','$impactfactor')";
     $result = mysqli_query($conn, $sql);
     
     if($result){
