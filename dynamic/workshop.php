@@ -1,8 +1,16 @@
 <?php  
+// for localhost
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "portfolio";
+
+
+// for production
+// $servername = "localhost";
+// $username = "id18903059_root";
+// $password = "DLIcutTda>1k8fju";
+// $database = "id18903059_poftfolio";
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
 
@@ -45,7 +53,7 @@ if (!$conn){
                  while($row = mysqli_fetch_assoc($result)){
                    $sno=$sno+1; 
                    echo "<tr>
-                         <th scope='row'>".$sno."</th>
+                         <th >".$sno."</th>
                          <td>".$row['organization']."</td>
                          <td>".$row['topic']."</td>
                          <td>".$row['startDate']."</td>

@@ -1,15 +1,18 @@
 
 <?php
 
-  
- $servername = "localhost";
-//  $username = "id18903059_useradmin";
-//  $password = "=M(qUHEVt\7VMiU{";
-//  $database = "id18903059_poftfolio";
-
+// for localhost
+$servername = "localhost";
 $username = "root";
 $password = "";
 $database = "portfolio";
+
+
+// for production
+// $servername = "localhost";
+// $username = "id18903059_root";
+// $password = "DLIcutTda>1k8fju";
+// $database = "id18903059_poftfolio";
  
  //Create a conncetion
  $conn = mysqli_connect($servername,$username,$password,$database);
@@ -52,11 +55,8 @@ $database = "portfolio";
                   $sno=0;
                   while($row = mysqli_fetch_assoc($result)){
                     $sno=$sno+1; 
-                      //echo "var_dump($row);
-                    // echo $sno. "CourseName".$row['courseName']." UniversityName". $row['universityName']."StartDate".$row['startDate']."EndDate".$row['endDate'];
-                    // echo "<br>";
                     echo "<tr>
-                          <th scope='row'>".$sno."</th>
+                          <th>".$sno."</th>
                           <td>".$row['courseName']."</td>
                           <td>".$row['universityName']."</td>
                           <td>".$row['startDate']."</td>

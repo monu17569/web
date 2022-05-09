@@ -26,7 +26,7 @@
         } );
     </script> -->
           <!-- Navigation menu starts -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,22 +104,20 @@
 
 
 <!-- HOMEPAGE INFO  -->
-<div class="container py-4">
+<div class="container py-4 my-5">
   <div class="row align-items-md-stretch">
       <div class="col-md-4">
-        <div class="h-100 p-5 bg-light border rounded-6">
+        <div class="h-10 p-5 bg-light border rounded-6">
           <a href="#">
-            <img src="./img/img1.png" alt="Image">
+            <img src="./img/logo.png" alt="Image">
           </a>  
         </div>
       </div>
       <div class="col-md-8">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
-          <h2>Teacher name</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
-          <p>Laudantium, amet suscipit. Cupiditate</p> 
-          <p>suscipit animi repellat</p> 
-          <p>quia tempora expedita earum<p> 
+        <div class="h-100 p-4 text-white bg-secondary rounded-3">
+          <h2>Dr. Kuldeep Singh</h2>
+          <p>Assistant Professor <br> Department of Computer Science <br> University of Delhi</p> 
+  
         </div>
       </div>   
   </div>

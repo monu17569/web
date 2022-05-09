@@ -1,8 +1,16 @@
 <?php 
+// for localhost
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "portfolio";
+
+
+// for production
+// $servername = "localhost";
+// $username = "id18903059_root";
+// $password = "DLIcutTda>1k8fju";
+// $database = "id18903059_poftfolio";
 
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
@@ -53,9 +61,10 @@ if (!$conn){
                               <td> <?php 
                                       $list_items = explode("\n", $row['Disc']);
                                         echo '<ul>';
-                                                    foreach($list_items as $list_item)
-                                                    if(!empty($list_items)){
-                                                        echo '<li>' . $list_item . '</li>';
+                                                    foreach($list_items as $list_item) {
+                                                      if(!empty($list_items)){
+                                                          echo '<li>' . $list_item . '</li>';
+                                                      }
                                                     }
                                         echo '</ul>';
                                     ?> </td>

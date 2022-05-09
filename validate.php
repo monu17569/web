@@ -1,9 +1,19 @@
 <?php
  
+//  For localhost
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "portfolio";
+
+
+// for production
+// $servername = "localhost";
+// $username = "id18903059_root";
+// $password = "DLIcutTda>1k8fju";
+// $database = "id18903059_poftfolio";
+
+
  //Create a conncetion
  $conn = mysqli_connect($servername,$username,$password,$database);
 
@@ -12,9 +22,6 @@ $database = "portfolio";
    die("Sorry we failed to connect :" .mysqli_connect_error());
  }
 
-?>
-
-<?php
 if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	
 	$adminname = $_POST["adminname"];

@@ -1,11 +1,18 @@
 <?php
 $duplicate = false;
 $insert = false; 
+// for localhost
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "portfolio";
 
+
+// for production
+// $servername = "localhost";
+// $username = "id18903059_root";
+// $password = "DLIcutTda>1k8fju";
+// $database = "id18903059_poftfolio";
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
 

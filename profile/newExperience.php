@@ -1,10 +1,18 @@
 <?php
 $duplicate = false;
 $insert = false; 
+// for localhost
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "portfolio";
+
+
+// for production
+// $servername = "localhost";
+// $username = "id18903059_root";
+// $password = "DLIcutTda>1k8fju";
+// $database = "id18903059_poftfolio";
 
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
@@ -28,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $duplicate =true;
   }else{
     //Sql query to be executed
-    $sql = "INSERT INTO experience ( universityName,designation,Disc,startDate,endDate) VALUES ('$universityName',$designation,$description,'$startDate','$endDate')";
+    $sql = "INSERT INTO experience ( universityName, designation, Disc, startDate, endDate) VALUES ('$universityName', '$designation',' $description','$startDate','$endDate')";
     $result = mysqli_query($conn, $sql);
     
     if($result){
