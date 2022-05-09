@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['idEdit'])){
     // Update the record
       $id = $_POST['idEdit'];
       $universityName = $_POST["unameEdit"];
-      $designation = $_POST["designationtEdit"];
+      $designation = $_POST["designationEdit"];
       $description = $_POST["descriptionEdit"];
       $startDate = $_POST["sdEdit"];
       $endDate = $_POST["edEdit"];
@@ -198,11 +198,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['idEdit'])){
      element.addEventListener("click",(e) =>{
        console.log("edit");
        tr = e.target.parentNode.parentNode;
-       universityName = tr.getElementsByTagName("td")[0].innerText;
-       designation = tr.getElementsByTagName("td")[1].innerText;
-       description = tr.getElementsByTagName("td")[2].innerText;
-       startDate = tr.getElementsByTagName("td")[3].innerText;
-       endDate = tr.getElementsByTagName("td")[4].innerText;
+       universityName = tr.getElementsByTagName("td")[1].innerText;
+       designation = tr.getElementsByTagName("td")[2].innerText;
+       description = tr.getElementsByTagName("td")[3].innerText;
+       startDate = tr.getElementsByTagName("td")[4].innerText;
+       endDate = tr.getElementsByTagName("td")[5].innerText;
        console.log( universityName,designation,description, startDate, endDate);
        unameEdit.value = universityName;
        designationEdit.value = designation;
