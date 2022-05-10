@@ -103,35 +103,34 @@
     <!-- Navigation menu ends -->
 
 <div class="container py-4 my-5">
-
+    
         <!-- HOMEPAGE INFO  -->
-        <div class="container py-4 my-5">
+        <div class="container py-1 my-2">
           <div class="row align-items-md-stretch">
               <div class="col-md-4">
-                <div class="h-15 p-5 bg-light border rounded-6">
+                <div class="p-5 bg-light border rounded-2">
                   <a href="#">
                     <img src="./img/logo.png" alt="Image">
                   </a>  
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="h-100 p-4 text-white bg-secondary rounded-3">
+                <div class="h-100 p-3 text-white bg-dark rounded-3">
                   <h2>Dr. Kuldeep Singh</h2>
-                  <p>Assistant Professor <br> Department of Computer Science <br> University of Delhi</p> 
-          
+                  <p>Assistant Professor <br> Department of Computer Science.<br>University of Delhi</p> 
                 </div>
               </div>   
           </div>
         </div>
-
+        
         <!-- END OF HOMEPAGE INFO -->
 
-    <!-- <h2>2. Qualification  2.1 Degree</h2> -->
-    <?php 
-        include('./dynamic/degree.php');
-    ?>
-     <h4>Below Degree</h4> 
+    <!--<h2>2. Qualification  2.1 Degree</h2>-->
     
+    <!-- <h4>Below Degree</h4> -->
+     <?php
+        include('./dynamic/degree.php');
+     ?>
     <h2>3. Research   </h2>
     <?php
         include('./dynamic/indexingAtSCI.php');
