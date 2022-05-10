@@ -63,9 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
       <!-- Nav bar starts -->
-    <div class="alert alert-primary my-2" role="alert">
-      <h2>Edit Your Degree </h2>
-    </div>
+      <a href="./degree.php" style="text-decoration: none;">
+        <div class="alert alert-primary my-2" role="alert">
+          <h2>Edit Your Degree </h2>
+        </div>
+      </a>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
      <?php 

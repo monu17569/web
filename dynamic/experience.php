@@ -55,7 +55,7 @@ if (!$conn){
                       while($row = mysqli_fetch_assoc($result)){ ?>
                        <?php $sno = $sno+1; ?>
                         <tr>
-                              <td> <?php echo $sno; ?> </td>
+                              <td> <?php echo "<b>$sno</b>"; ?> </td>
                               <td> <?php echo $row['universityName']; ?> </td>
                               <td> <?php echo $row['designation']; ?> </td>
                               <td> <?php 

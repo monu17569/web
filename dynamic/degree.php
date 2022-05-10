@@ -36,6 +36,14 @@ $database = "portfolio";
   <title></title>
 </head>
 <body>
+    
+<div class="card text-white bg-info mb-3 my-5" >
+  <div class="card-header"><h2>Degree</h2></div>
+  <div class="card-body">
+    <!-- <h5 class="card-title">Success card title</h5> -->
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  
+
     <div class="container my-5" id="degree" >
       <table class="table" id="myTable">
         <caption></caption>
@@ -68,5 +76,7 @@ $database = "portfolio";
         </tbody>
       </table>
     </div>
+  </div>
+</div>
 </body>
 </html>

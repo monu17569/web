@@ -11,9 +11,12 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <div class="alert alert-primary my-2" role="alert">
-      <h2>Dashboard</h2>
-    </div>
+    <!-- link to go to admin page -->
+    <a href="./admin.php" style="text-decoration: none;">
+      <div class="alert alert-primary my-2" role="alert">
+        <h2>Dashboard</h2>
+      </div>
+    </a>
     <div class="container">
         <div class="row my-5">
           <div class="col-lg">
