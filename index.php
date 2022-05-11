@@ -17,6 +17,7 @@
 </head>
 <body>
   
+  
     <!-- importing degree.php -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -36,7 +37,7 @@
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Qualification
+                Education
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#degree">Degree</a></li>
@@ -44,6 +45,22 @@
             </li>
           </ul>
         </div>
+        <!-- Supervision starts-->
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Supervision
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">PHD</a></li>
+                <li><a class="dropdown-item" href="#">MCA</a></li>
+                <li><a class="dropdown-item" href="#">MSC</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- Supervision ends -->
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -52,10 +69,11 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#indexingatsci">Journal(Indexing in SCI)</a></li>
-                <a class="dropdown-item" href="#indexingatscopus">Journal (Indexing in SCOPUS)</a></li>
-                <a class="dropdown-item" href="#referred">Journal Referred</a></li>
-                <li><a class="dropdown-item" href="#bookchapter">Book Chapter</a></li>
+                <li><a class="dropdown-item" href="#indexingatscopus">Journal (Indexing in SCOPUS)</a></li>
+                <li><a class="dropdown-item" href="#referred">Journal Referred</a></li>
                 <li><a class="dropdown-item" href="#conference">Conference</a></li>
+                <li><a class="dropdown-item" href="#bookchapter">Book Chapter</a></li>
+                <li><a class="dropdown-item" href="#">Books</a></li>
               </ul>
             </li>
           </ul>
@@ -82,11 +100,29 @@
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#awards">Awards/Fellowship/Grants</a></li>
                 <li><a class="dropdown-item" href="#workshop">Workshop</a></li>
+                <li><a class="dropdown-item" href="#">Reviewer</a></li>
+                <li><a class="dropdown-item" href="#">FDP(Faculty Development Program)</a></li>
+                <li><a class="dropdown-item" href="#">Membership</a></li>
               </ul>
             </li>
           </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Funded Projects</a></li>
+                <li><a class="dropdown-item" href="#">MCA Major Projects</a></li>
+                <li><a class="dropdown-item" href="#">MSC Minor Projects</a></li>
+                <li><a class="dropdown-item" href="#">MSC Major Projects</a></li>
+              </ul>
+            </li>
+          </ul>
+      </div>
+        <!-- <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,12 +133,12 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </nav>
     <!-- Navigation menu ends -->
 
-<div class="container py-4 my-5">
+<div class="container  bg-light py-4 my-5">
     
         <!-- HOMEPAGE INFO  -->
         <div class="container py-1 my-2">
@@ -110,7 +146,7 @@
               <div class="col-md-4">
                 <div class="p-5 bg-light border rounded-2">
                   <a href="#">
-                    <img src="./img/logo.png" alt="Image">
+                    <img src="./img/img1.jpg" alt="Image">
                   </a>  
                 </div>
               </div>
@@ -127,7 +163,7 @@
 
     <!--<h2>2. Qualification  2.1 Degree</h2>-->
     
-    <!-- <h4>Below Degree</h4> -->
+    <!-- <h4>Below Degree</h4> --> 
      <?php
         include('./dynamic/degree.php');
      ?>

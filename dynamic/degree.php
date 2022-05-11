@@ -37,7 +37,7 @@ $database = "portfolio";
 <body>
     
 
-<div class="container rounded text-dark text-center bg-info mb-3 my-5"><h2>Degree</h2>
+<div  class="container rounded text-dark text-center bg-info mb-3 my-5"><h2>Degree</h2>
     <div class="container my-5" id="degree" >
       <table class="table" id="myTable">
         <caption></caption>
