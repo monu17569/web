@@ -110,11 +110,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
       <!-- Nav bar starts -->
-    <a href="../dashboard.php" style="text-decoration: none;">
       <div class="alert alert-primary my-2" role="alert">
-          <h2>Degree Dashboard</h2>
+          <h2><a href="../dashboard.php"><button type="button" 
+                class="btn btn-outline-dark" ><strong>Home</strong></button></a>
+                Degree Dashboard
+          </h2>
       </div>
-    </a>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
       <?php if($delete){

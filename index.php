@@ -40,7 +40,7 @@
                 Education
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#degree">Degree</a></li>
+                <li><a class="dropdown-item" href="./dynamic/degree.php">Degree</a></li>
               </ul>
             </li>
           </ul>
@@ -138,7 +138,7 @@
     </nav>
     <!-- Navigation menu ends -->
 
-<div class="container  bg-light py-4 my-5">
+<div class="container  bg-danger py-4 my-5">
     
         <!-- HOMEPAGE INFO  -->
         <div class="container py-1 my-2">
@@ -161,54 +161,7 @@
         
         <!-- END OF HOMEPAGE INFO -->
 
-    <!--<h2>2. Qualification  2.1 Degree</h2>-->
-    
-    <!-- <h4>Below Degree</h4> --> 
-     <?php
-        include('./dynamic/degree.php');
-     ?>
-    <h2>3. Research   </h2>
-    <?php
-        include('./dynamic/indexingAtSCI.php');
-    ?>
-    <h4>Below Indexing At SCI</h4>
-    <?php
-        include('./dynamic/indexingAtSCOPUS.php');
-    ?>
-    <h4>Below Indexing At SCOPUS</h4>
-    <?php
-        include('./dynamic/referred.php');
-    ?>
-    <h4>Below Referred</h4>
-    <?php
-        include('./dynamic/bookchapter.php');
-    ?>
-    <h4>Below Book Chapter</h4>
-    <?php
-        include('./dynamic/conference.php');
-    ?>
-    <h4>Below COnference</h4>
-
-
-    <h2>4. Teaching ---- 4.1 Subject Expertise  4.2 Experience </h2>
-    <?php
-        include('./dynamic/expertise.php');
-    ?>
-    <h4>Below Expertise</h4>
-    <?php
-        include('./dynamic/experience.php');
-    ?>
-    <h4>Below Experience</h4>
-    <h2>5. Recognition ---- 5.1 Awards  5.2 Workshop</h2>
-    <?php
-        include('./dynamic/awards.php');
-    ?>
-    <h4>Below awards</h4>
-    <?php
-        include('./dynamic/workshop.php');
-    ?>
-    <h4>Below workshop</h4>
-    
+   
     
     <h2>6.Contact</h2>
 

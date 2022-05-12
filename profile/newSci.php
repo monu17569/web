@@ -60,11 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
       <!-- Nav bar starts -->
-      <a href="./sci.php" style="text-decoration: none;">
-        <div class="alert alert-primary my-2" role="alert">
-          <h2>Edit Your Indexing at SCI </h2>
-        </div>
-      </a>
+      <div class="alert alert-primary my-2" role="alert">
+          <h2><a href="./sci.php"><button type="button" 
+                class="btn btn-outline-dark" ><strong>Back</strong></button></a>
+                Edit Your Indexing at SCI
+          </h2>
+      </div>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
      <?php 

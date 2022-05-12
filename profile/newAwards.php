@@ -61,11 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
       <!-- Nav bar starts -->
-      <a href="./awards.php" style="text-decoration: none;">
-        <div class="alert alert-primary my-2" role="alert">
-          <h2>Edit Your Awards </h2>
+      <div class="alert alert-primary my-2" role="alert">
+          <h2><a href="./awards.php"><button type="button" 
+                class="btn btn-outline-dark" ><strong>Back</strong></button></a>
+                Edit Your Awards
+          </h2>
         </div>
-      </a>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
      <?php 

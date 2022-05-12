@@ -115,10 +115,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['idEdit'])){
 
 
             <!-- Nav bar starts -->
-            <a href="../dashboard.php" style="text-decoration: none;">
             <div class="alert alert-primary my-2" role="alert">
-              <h2>Teaching Experience Dashboard</h2>
-            </div></a>
+              <h2><a href="../dashboard.php"><button type="button" 
+                    class="btn btn-outline-dark" ><strong>Home</strong></button></a>
+                    Teaching Experience Dashboard
+              </h2>
+            </div>
               <!-- Nav bar ends -->
 
           <!-- for displaying alerts -->

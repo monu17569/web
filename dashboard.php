@@ -12,11 +12,13 @@
   </head>
   <body>
     <!-- link to go to admin page -->
-    <a href="./admin.php" style="text-decoration: none;">
       <div class="alert alert-primary my-2" role="alert">
-        <h2>Dashboard</h2>
+        <h2>Dashboard
+        <a href="./newAwards.php"><button type="button" 
+        class="btn btn-danger float-right"><h4>LOGOUT</h4></button></a>
+        </h2> 
       </div>
-    </a>
+
     <div class="container">
         <div class="row my-5">
           <div class="col-lg">
@@ -90,7 +92,7 @@
         </div>
       <div class="row my-5">
         <div class="col-lg"><a href="./profile/workshop.php" style="text-decoration: none;">
-          <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+          <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                 
                   <div class="card-header"><h4>Workshop</h4></div>
               

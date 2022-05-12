@@ -63,12 +63,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
       <!-- Nav bar starts -->
-      <a href="./degree.php" style="text-decoration: none;">
         <div class="alert alert-primary my-2" role="alert">
-          <h2>Edit Your Degree </h2>
+          <h2><a href="./degree.php"><button type="button" 
+                class="btn btn-outline-dark" ><strong>Back</strong></button></a>
+                Edit Your Degree
+          </h2>
         </div>
-      </a>
       <!-- Nav bar ends -->
+
      <!-- for displaying alerts -->
      <?php 
       if($insert){
@@ -113,6 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <button type="submit" class="btn btn-primary my-3"><h5>Submit Info</h5></button>
       </form>
     </div>
+
+    
 
     <!-- Form to edit ends -->
     <!-- Optional JavaScript; choose one of the two! -->

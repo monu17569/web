@@ -59,11 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
       <!-- Nav bar starts -->
-      <a href="./conference.php" style="text-decoration: none;">
-        <div class="alert alert-primary my-2" role="alert">
-          <h2>Edit Your Conference Data  </h2>
+      <div class="alert alert-primary my-2" role="alert">
+          <h2><a href="./conference.php"><button type="button" 
+                class="btn btn-outline-dark" ><strong>Back</strong></button></a>
+                Edit Your Data Conference Data
+          </h2>
         </div>
-      </a>
       <!-- Nav bar ends -->
      <!-- for displaying alerts -->
      <?php 
