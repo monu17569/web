@@ -14,6 +14,10 @@ $database = "portfolio";
 // $password = "DLIcutTda>1k8fju";
 // $database = "id18903059_poftfolio";
 
+session_start();
+if(!isset($_SESSION['adminname'])){
+  header("Location: ../admin.php");
+}
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
 

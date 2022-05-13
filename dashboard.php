@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(!isset($_SESSION['adminname'])){
+  header("Location: ./admin.php");
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +20,7 @@
     <!-- link to go to admin page -->
       <div class="alert alert-primary my-2" role="alert">
         <h2>Dashboard
-        <a href="./newAwards.php"><button type="button" 
+        <a href="./logout.php"><button type="button" 
         class="btn btn-danger float-right"><h4>LOGOUT</h4></button></a>
         </h2> 
       </div>

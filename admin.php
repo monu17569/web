@@ -35,6 +35,7 @@
 
 	<?php
  
+ session_start();
 //  For localhost
 $servername = "localhost";
 $username = "root";
@@ -56,6 +57,7 @@ $wrong = false;
  if (!$conn){ 
    die("Sorry we failed to connect :" .mysqli_connect_error());
  }
+ 
 
 if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	
@@ -66,12 +68,13 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	$sql = "SELECT * FROM `admin`";
   $result = mysqli_query($conn,$sql);
 
-	$admin = mysqli_fetch_assoc($result);
+	$row = mysqli_fetch_assoc($result);
 	
 		
-		if(($admin['adminname'] == $adminname) &&
-			($admin['password'] == $password)) {
-				header("Location: ./dashboard.php");
+		if(($row['adminname'] == $adminname) &&
+			($row['password'] == $password)) {
+				$_SESSION['adminname'] = $row['adminname'];
+					header('Location: ./dashboard.php');
 		}
 		else 
     {

@@ -15,7 +15,7 @@
     
   <title>Homepage</title>
 </head>
-<body>
+<body onload="clicked()">
   
   
     <!-- importing degree.php -->
@@ -138,7 +138,7 @@
     </nav>
     <!-- Navigation menu ends -->
 
-<div class="container  bg-danger py-4 my-5">
+<div class="container  bg-success py-4 my-5">
     
         <!-- HOMEPAGE INFO  -->
         <div class="container py-1 my-2">
@@ -164,6 +164,28 @@
    
     
     <h2>6.Contact</h2>
+
+     <!--For Counting no of visits--> 
+     <script>
+        function clicked() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://api.countapi.xyz/hit/drkuldeepsingh.000webhostapp.com/awesomeclick");
+            xhr.responseType = "json";
+            xhr.onload = function(){
+                var visit=this.response.value;
+                console.log(visit);
+                document.getElementById("visit").innerText = visit
+                // $("#visit").text(visit)
+            }
+            xhr.send();
+        }
+    </script>
+
+     <div class="card text-center">
+              <div class="card-footer">
+               <strong> &copy 2022 No. of visits : <span id="visit"></span> </strong>
+              </div>
+     </div>
 
 </div>
 
