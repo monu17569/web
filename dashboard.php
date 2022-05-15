@@ -104,7 +104,35 @@ if(!isset($_SESSION['adminname'])){
               
           </div></a>
         </div>
-      </div>  
+        <div class="col-lg"><a href="./profile/reviewer.php" style="text-decoration: none;">
+          <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                
+                  <div class="card-header"><h4>Reviewer</h4></div>
+              
+          </div></a>
+        </div>
+        <div class="col-lg"><a href="./profile/fdp.php" style="text-decoration: none;">
+          <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                
+                  <div class="card-header"><h4>FDP</h4></div>
+              
+          </div></a>
+        </div>
+      </div>
+      
+      <div class="row my-5">
+        <div class="col-lg"><a href="./profile/books.php" style="text-decoration: none;">
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">     
+                  <div class="card-header"><h4>Books</h4></div>   
+          </div></a>
+        </div>
+        <div class="col-lg"><a href="./profile/membership.php" style="text-decoration: none;">
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">    
+                  <div class="card-header"><h4>Membership</h4></div>    
+          </div></a>
+        </div>
+      </div>
+      
     </div>
     
 

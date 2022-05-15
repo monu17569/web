@@ -1,4 +1,5 @@
 <?php 
+
 // for localhost
 $servername = "localhost";
 $username = "root";
@@ -11,7 +12,6 @@ $database = "portfolio";
 // $username = "id18903059_root";
 // $password = "DLIcutTda>1k8fju";
 // $database = "id18903059_poftfolio";
-
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
 
@@ -34,28 +34,31 @@ if (!$conn){
  <title></title>
 </head>
 <body>
-   <div class="container my-5" id="bookchapter">
+   <div class="container my-5" id="reviewer">
      <table class="table" id="myTable">
        <caption></caption>
        <thead>
          <tr>
            <th scope="col">Sl.No.</th>
-           <th scope="col">Description</th>
-           <th scope="col">Year</th>
+           <th scope="col">Journal</th>
+           <th scope="col">Indexed</th>
+           <th scope="col">Publisher</th>
          </tr>
        </thead>
        <tbody>
                <?php
-                 $sql = "SELECT * FROM `bookchapter`";
+                 $sql = "SELECT * FROM `reviewer`";
                  $result = mysqli_query($conn, $sql);
                  $sno=0;
                  while($row = mysqli_fetch_assoc($result)){
                    $sno=$sno+1; 
                    echo "<tr>
                          <th scope='row'>".$sno."</th>
-                         <td>".$row['Disc']."</td>
-                         <td>".$row['years']."</td>
+                         <td>".$row['journal']."</td>
+                         <td>".$row['indexed']."</td>
+                         <td>".$row['publisher']."</td>
                          </tr>";
+
                  } 
                ?>
        </tbody>

@@ -40,7 +40,7 @@
                 Education
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="./dynamic/degree.php">Degree</a></li>
+                <li><a class="dropdown-item" href="#degree">Degree</a></li>
               </ul>
             </li>
           </ul>
@@ -73,7 +73,7 @@
                 <li><a class="dropdown-item" href="#referred">Journal Referred</a></li>
                 <li><a class="dropdown-item" href="#conference">Conference</a></li>
                 <li><a class="dropdown-item" href="#bookchapter">Book Chapter</a></li>
-                <li><a class="dropdown-item" href="#">Books</a></li>
+                <li><a class="dropdown-item" href="#books">Books</a></li>
               </ul>
             </li>
           </ul>
@@ -87,6 +87,8 @@
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#expertise">Subject Expertise</a></li>
                 <li><a class="dropdown-item" href="#experience">Experience</a></li>
+                <li><a class="dropdown-item" href="#experience">Teaching Experience</a></li>
+                <li><a class="dropdown-item" href="#experience">Adminstrative Experience</a></li>
               </ul>
             </li>
           </ul>
@@ -100,9 +102,9 @@
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#awards">Awards/Fellowship/Grants</a></li>
                 <li><a class="dropdown-item" href="#workshop">Workshop</a></li>
-                <li><a class="dropdown-item" href="#">Reviewer</a></li>
-                <li><a class="dropdown-item" href="#">FDP(Faculty Development Program)</a></li>
-                <li><a class="dropdown-item" href="#">Membership</a></li>
+                <li><a class="dropdown-item" href="#reviewer">Reviewer</a></li>
+                <li><a class="dropdown-item" href="#fdp">FDP(Faculty Development Program)</a></li>
+                <li><a class="dropdown-item" href="#membership">Membership</a></li>
               </ul>
             </li>
           </ul>
@@ -138,7 +140,7 @@
     </nav>
     <!-- Navigation menu ends -->
 
-<div class="container  bg-success py-4 my-5">
+<div class="container  bg-light py-4 my-5">
     
         <!-- HOMEPAGE INFO  -->
         <div class="container py-1 my-2">
@@ -158,9 +160,72 @@
               </div>   
           </div>
         </div>
+        <!-- <h4>Below Degree</h4> --> 
         
         <!-- END OF HOMEPAGE INFO -->
+        <!--<h2>2. Qualification  2.1 Degree</h2>-->
+    
+    
+     <?php 
+        include('./dynamic/degree.php');
+     ?>
+    <h2>3. Research   </h2>
+    <?php
+        include('./dynamic/indexingAtSCI.php');
+    ?>
+    <h4>Below Indexing At SCI</h4>
+    <?php
+        include('./dynamic/indexingAtSCOPUS.php');
+    ?>
+    <h4>Below Indexing At SCOPUS</h4>
+    <?php
+        include('./dynamic/referred.php');
+    ?>
+    <h4>Below Referred</h4>
+    <?php
+        include('./dynamic/bookchapter.php');
+    ?>
+    <h4>Below Book Chapter</h4>
+    <?php
+        include('./dynamic/conference.php');
+    ?>
+    <h4>Below COnference</h4>
+    <?php
+        include('./dynamic/books.php');
+    ?>
+    <h4>Below Books</h4>
 
+
+    <h2>4. Teaching  4.1 Subject Expertise  4.2 Experience </h2>
+    <?php
+        include('./dynamic/expertise.php');
+    ?>
+    <h4>Below Expertise</h4>
+    <?php
+        include('./dynamic/experience.php');
+    ?>
+    <h4>Below Experience</h4>
+    <h2>5. Recognition  5.1 Awards  5.2 Workshop 5.3 Reviewer 5.4 FDP  5.5 Membership</h2>
+    <?php
+        include('./dynamic/awards.php');
+    ?>
+    <h4>Below awards</h4>
+    <?php
+        include('./dynamic/workshop.php');
+    ?>
+    <h4>Below workshop</h4>
+    <?php
+        include('./dynamic/reviewer.php');
+    ?>
+    <h4>Below Reviewer</h4>
+    <?php
+        include('./dynamic/fdp.php');
+    ?>
+    <h4>Below FDP</h4>
+    <?php
+        include('./dynamic/membership.php');
+    ?>
+    <h4>Below membership</h4>
    
     
     <h2>6.Contact</h2>

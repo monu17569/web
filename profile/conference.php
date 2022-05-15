@@ -38,9 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     // Update the record
   $id = $_POST['idEdit'];
   $description = $_POST["descriptionEdit"];
+  $year = $_POST["yearEdit"];
 
 // Sql query to be executed
-  $sql = "UPDATE `conference` SET `Disc` = '$description'  WHERE `conference`.`id` = $id";
+  $sql = "UPDATE `conference` SET `Disc` = '$description', `years` = '$year'  WHERE `conference`.`id` = $id";
   $result = mysqli_query($conn, $sql);
   if($result){
     $update = true;
@@ -83,6 +84,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                       <label for="description" class="form-label"> <h5>Description</h5></label>
                       <input type="text" class="form-control" id="descriptionEdit" name="descriptionEdit" required >
                     </div>
+
+                    <div class="mb-3">
+                      <label for="year" class="form-label"> <h5>Year</h5></label>
+                      <input type="text" class="form-control" id="yearEdit" name="yearEdit" required>
+                    </div>
+
 
                     </div>
                   <div class="modal-footer d-block mr-auto">
@@ -129,6 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
          <tr>
            <th scope="col">Sl.No.</th>
            <th scope="col">Description</th>
+           <th scope="col">Year</th>
          </tr>
        </thead>
        <tbody>
@@ -141,6 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                    echo "<tr>
                          <th scope='row'>".$sno."</th>
                          <td>".$row['Disc']."</td>
+                         <td>".$row['years']."</td>
                          <td><button type='button' class='edit btn btn-success' id=".$row['id'].">Update</button></td>
                          <td><button type='button' class='delete btn btn-danger' id=d".$row['id'].">Delete</button></td>
                          </tr>";
@@ -161,8 +170,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
        console.log("edit");
        tr = e.target.parentNode.parentNode;
        description = tr.getElementsByTagName("td")[0].innerText;
-       console.log(description);
+       year = tr.getElementsByTagName("td")[1].innerText;
+       console.log(description,year);
        descriptionEdit.value = description;
+       yearEdit.value = year;
        idEdit.value = e.target.id;
        console.log(e.target.id);
        $('#editModal').modal('toggle');

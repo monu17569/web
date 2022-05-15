@@ -29,6 +29,7 @@ if (!$conn){
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $description = $_POST["description"];
   $impactfactor = $_POST["impactfactor"];
+  $year = $_POST["year"];
 
     //  duplicate value check
   $dup = mysqli_query($conn,"SELECT * FROM indexingatsci WHERE Disc='$description'");
@@ -38,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $duplicate =true;
   }else{
     //Sql query to be executed
-    $sql = "INSERT INTO indexingatsci (Disc , impactfactor) VALUES ('$description','$impactfactor')";
+    $sql = "INSERT INTO indexingatsci (Disc , impactfactor,years) VALUES ('$description','$impactfactor','$year')";
     $result = mysqli_query($conn, $sql);
     
     if($result){
@@ -103,6 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="mb-3">
             <label for="impactfactor" class="form-label"> <h5>Impact Factor</h5></label>
             <input type="text" class="form-control" id="impactfactor" name="impactfactor" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="year" class="form-label"> <h5>Year</h5></label>
+            <input type="text" class="form-control" id="year" name="year" required>
           </div>
 
           <button type="submit" class="btn btn-primary my-3"><h5>Submit Info</h5></button>

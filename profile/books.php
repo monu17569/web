@@ -1,8 +1,7 @@
 <?php 
 $update = false;
 $delete = false;
-//connect to database
-
+//connect to database 
 // for localhost
 $servername = "localhost";
 $username = "root";
@@ -16,11 +15,12 @@ $database = "portfolio";
 // $password = "DLIcutTda>1k8fju";
 // $database = "id18903059_poftfolio";
 
+
 session_start();
+
 if(!isset($_SESSION['adminname'])){
   header("Location: ../admin.php");
 }
-
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
 
@@ -28,11 +28,10 @@ $conn = mysqli_connect($servername,$username,$password,$database);
 if (!$conn){ 
   die("Sorry we failed to connect :" .mysqli_connect_error());
 }
-
 if(isset($_GET['delete'])){
   $id = $_GET['delete'];
   $delete = true;
-  $sql = "DELETE FROM `indexingatscopus` WHERE `id` = $id";
+  $sql = "DELETE FROM `books` WHERE `id` = $id";
   $result = mysqli_query($conn, $sql);
 }
 
@@ -41,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     // Update the record
   $id = $_POST['idEdit'];
   $description = $_POST["descriptionEdit"];
-  $year = $_POST['yearEdit'];
+  $year = $_POST["yearEdit"];
 
 // Sql query to be executed
-  $sql = "UPDATE `indexingatscopus` SET `Disc` = '$description' , `years`='$year' WHERE `indexingatscopus`.`id` = $id";
+  $sql = "UPDATE `books` SET `Disc` = '$description', `years` = '$year'  WHERE `books`.`id` = $id";
   $result = mysqli_query($conn, $sql);
   if($result){
     $update = true;
@@ -53,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       echo "We could not update the record successfully";
   }
   }}
+
 
 ?>
 <!DOCTYPE html>
@@ -69,15 +69,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 </head>
 <body>
 
-          <!-- Edit modal -->
-          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <!-- Edit modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="./scopus.php" method="post">
+                <form action="./books.php" method="post">
                   <div class="modal-body">
                   
                     <input type="hidden" name="idEdit" id="idEdit">
@@ -106,35 +106,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="alert alert-primary my-2" role="alert">
           <h2><a href="../dashboard.php"><button type="button" 
                 class="btn btn-outline-dark" ><strong>Home</strong></button></a>
-                SCOPUS Dashboard
+                Books  Dashboard
           </h2>
         </div>
           <!-- Nav bar ends -->
 
-      <!-- for displaying alerts -->
+          <!-- for displaying alerts -->
         <?php if($delete){
             echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
             <strong>Warning!</strong> Your data has been deleted successfully.";
-            echo "<a href='./scopus.php'>";
+            echo "<a href='./books.php'>";
             echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
           </div></a>"; 
           } ?>
         <?php if($update){
             echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
             <strong>Success!</strong> Your data has been updated successfully.";
-            echo "<a href='./scopus.php'>";
+            echo "<a href='./books.php'>";
             echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
           </div></a>";
           } ?>
 
-
         <div class="container my-5">
-        <a href="./newScopus.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
+        <a href="./newBooks.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
         </div>
 
-
-
-   <div class="container my-5" id="indexingatscopus">
+   <div class="container my-5" id="books">
      <table class="table" id="myTable">
        <caption></caption>
        <thead>
@@ -146,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
        </thead>
        <tbody>
                <?php
-                 $sql = "SELECT * FROM `indexingatscopus`";
+                 $sql = "SELECT * FROM `books`";
                  $result = mysqli_query($conn, $sql);
                  $sno=0;
                  while($row = mysqli_fetch_assoc($result)){
@@ -193,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if (confirm("Are you sure you want to delete !")) {
           console.log("yes");
-          window.location = `./scopus.php?delete=${id}`;
+          window.location = `./books.php?delete=${id}`;
         }
         else {
           console.log("no");

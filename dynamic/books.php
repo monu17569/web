@@ -34,7 +34,7 @@ if (!$conn){
  <title></title>
 </head>
 <body>
-   <div class="container my-5" id="bookchapter">
+   <div class="container my-5" id="books">
      <table class="table" id="myTable">
        <caption></caption>
        <thead>
@@ -46,7 +46,7 @@ if (!$conn){
        </thead>
        <tbody>
                <?php
-                 $sql = "SELECT * FROM `bookchapter`";
+                 $sql = "SELECT * FROM `books`";
                  $result = mysqli_query($conn, $sql);
                  $sno=0;
                  while($row = mysqli_fetch_assoc($result)){

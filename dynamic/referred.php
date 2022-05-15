@@ -40,6 +40,7 @@ if (!$conn){
          <tr>
            <th scope="col">Sl.No.</th>
            <th scope="col">Description</th>
+           <th scope="col">Year</th>
          </tr>
        </thead>
        <tbody>
@@ -52,6 +53,7 @@ if (!$conn){
                    echo "<tr>
                          <th scope='row'>".$sno."</th>
                          <td>".$row['Disc']."</td>
+                         <td>".$row['years']."</td>
                          </tr>";
                  } 
                ?>

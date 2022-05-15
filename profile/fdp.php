@@ -2,7 +2,6 @@
 $update = false;
 $delete = false;
 //connect to database
-
 // for localhost
 $servername = "localhost";
 $username = "root";
@@ -20,7 +19,6 @@ session_start();
 if(!isset($_SESSION['adminname'])){
   header("Location: ../admin.php");
 }
-
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
 
@@ -28,11 +26,10 @@ $conn = mysqli_connect($servername,$username,$password,$database);
 if (!$conn){ 
   die("Sorry we failed to connect :" .mysqli_connect_error());
 }
-
 if(isset($_GET['delete'])){
   $id = $_GET['delete'];
   $delete = true;
-  $sql = "DELETE FROM `indexingatscopus` WHERE `id` = $id";
+  $sql = "DELETE FROM `fdp` WHERE `id` = $id";
   $result = mysqli_query($conn, $sql);
 }
 
@@ -40,11 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset( $_POST['idEdit'])){
     // Update the record
   $id = $_POST['idEdit'];
-  $description = $_POST["descriptionEdit"];
-  $year = $_POST['yearEdit'];
+  $topic = $_POST["topicEdit"];
+  $duration = $_POST["durationEdit"];
+  $organization = $_POST["organizationEdit"];
+  
 
 // Sql query to be executed
-  $sql = "UPDATE `indexingatscopus` SET `Disc` = '$description' , `years`='$year' WHERE `indexingatscopus`.`id` = $id";
+  $sql = "UPDATE `fdp` SET `topic` = '$topic' , `duration` = '$duration' , `organization`  = '$organization' WHERE `fdp`.`id` = $id";
   $result = mysqli_query($conn, $sql);
   if($result){
     $update = true;
@@ -69,29 +68,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 </head>
 <body>
 
-          <!-- Edit modal -->
-          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+<!-- Edit modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="./scopus.php" method="post">
+                <form action="./awards.php" method="post">
                   <div class="modal-body">
                   
                     <input type="hidden" name="idEdit" id="idEdit">
 
                     <div class="mb-3">
-                      <label for="description" class="form-label"> <h5>Description</h5></label>
-                      <input type="text" class="form-control" id="descriptionEdit" name="descriptionEdit" required >
+                      <label for="topic" class="form-label"> <h5>Topic</h5></label>
+                      <input type="text" class="form-control" id="topicEdit" name="topicEdit" required>
                     </div>
 
                     <div class="mb-3">
-                      <label for="year" class="form-label"> <h5>Year</h5></label>
-                      <input type="text" class="form-control" id="yearEdit" name="yearEdit" required>
+                      <label for="duration" class="form-label"> <h5>Duration</h5></label>
+                      <input type="text" class="form-control" id="durationEdit" name="durationEdit" required >
                     </div>
 
+                    <div class="mb-3">
+                      <label for="organization" class="form-label"> <h5>Organization</h5></label>
+                      <input type="text" class="form-control" id="organizationEdit" name="organizationEdit" required >
+                    </div>
+                  
                     </div>
                   <div class="modal-footer d-block mr-auto">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -106,94 +110,98 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="alert alert-primary my-2" role="alert">
           <h2><a href="../dashboard.php"><button type="button" 
                 class="btn btn-outline-dark" ><strong>Home</strong></button></a>
-                SCOPUS Dashboard
+                FDP Dashboard
           </h2>
         </div>
           <!-- Nav bar ends -->
 
-      <!-- for displaying alerts -->
-        <?php if($delete){
+          <!-- for displaying alerts -->
+      <?php if($delete){
             echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
             <strong>Warning!</strong> Your data has been deleted successfully.";
-            echo "<a href='./scopus.php'>";
+            echo "<a href='./fdp.php'>";
             echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
           </div></a>"; 
           } ?>
         <?php if($update){
             echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
             <strong>Success!</strong> Your data has been updated successfully.";
-            echo "<a href='./scopus.php'>";
+            echo "<a href='./fdp.php'>";
             echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
           </div></a>";
           } ?>
 
 
         <div class="container my-5">
-        <a href="./newScopus.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
+        <a href="./newFdp.php"><button type="button" class="btn btn-warning"><h4>Add New</h4></button></a>
         </div>
-
-
-
-   <div class="container my-5" id="indexingatscopus">
+   <div class="container my-5" id="fdp">
      <table class="table" id="myTable">
        <caption></caption>
        <thead>
          <tr>
            <th scope="col">Sl.No.</th>
-           <th scope="col">Description</th>
-           <th scope="col">Year</th>
+           <th scope="col">Topic</th>
+           <th scope="col">Duration</th>
+           <th scope="col">Organization</th>
          </tr>
        </thead>
        <tbody>
                <?php
-                 $sql = "SELECT * FROM `indexingatscopus`";
+                 $sql = "SELECT * FROM `fdp`";
                  $result = mysqli_query($conn, $sql);
                  $sno=0;
                  while($row = mysqli_fetch_assoc($result)){
                    $sno=$sno+1; 
                    echo "<tr>
                          <th scope='row'>".$sno."</th>
-                         <td>".$row['Disc']."</td>
-                         <td>".$row['years']."</td>
+                         <td>".$row['topic']."</td>
+                         <td>".$row['duration']."</td>
+                         <td>".$row['organization']."</td>
                          <td><button type='button' class='edit btn btn-success' id=".$row['id'].">Update</button></td>
                          <td><button type='button' class='delete btn btn-danger' id=d".$row['id'].">Delete</button></td>
                          </tr>";
+
                  } 
                ?>
        </tbody>
      </table>
    </div>
+
+   
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
 
    <!-- Optional JavaScript; choose one of the two! -->
   <script>
-   edits = document.getElementsByClassName('edit');
-   Array.from(edits).forEach((element) =>{
-     element.addEventListener("click",(e) =>{
+       edits = document.getElementsByClassName('edit');
+       Array.from(edits).forEach((element) =>{
+       element.addEventListener("click",(e) =>{
        console.log("edit");
        tr = e.target.parentNode.parentNode;
-       description = tr.getElementsByTagName("td")[0].innerText;
-       year = tr.getElementsByTagName("td")[1].innerText;
-       console.log(description,year);
-       descriptionEdit.value = description;
-       yearEdit.value = year;
+       topic = tr.getElementsByTagName("td")[0].innerText;
+       duration = tr.getElementsByTagName("td")[1].innerText;
+       organization = tr.getElementsByTagName("td")[2].innerText;
+       console.log(topic, duration , organization);
+       topicEdit.value = topic;
+       durationEdit.value = duration;
+       organizationEdit.value = organization;
        idEdit.value = e.target.id;
        console.log(e.target.id);
        $('#editModal').modal('toggle');
      })
    })
 
-   deletes = document.getElementsByClassName('delete');
+    deletes = document.getElementsByClassName('delete');
     Array.from(deletes).forEach((element) => {
-      element.addEventListener("click", (e) => {
+        element.addEventListener("click", (e) => {
         console.log("edit ");
         id = e.target.id.substr(1);
 
         if (confirm("Are you sure you want to delete !")) {
           console.log("yes");
-          window.location = `./scopus.php?delete=${id}`;
+          window.location = `./fdp.php?delete=${id}`;
         }
         else {
           console.log("no");

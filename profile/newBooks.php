@@ -31,13 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $year = $_POST["year"];
   
     //  duplicate value check
-  $dup = mysqli_query($conn,"SELECT * FROM bookchapter WHERE Disc='$description'");
+  $dup = mysqli_query($conn,"SELECT * FROM books WHERE Disc='$description'");
   if(mysqli_num_rows($dup)>0)
   {
     $duplicate =true;
   }else{
     //Sql query to be executed
-    $sql = "INSERT INTO bookchapter (Disc,years) VALUES ('$description','$year')";
+    $sql = "INSERT INTO books (Disc,years) VALUES ('$description','$year')";
     $result = mysqli_query($conn, $sql);
     
     if($result){
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
       <!-- Nav bar starts -->
       <div class="alert alert-primary my-2" role="alert">
-          <h2><a href="./bookchapter.php"><button type="button" 
+          <h2><a href="./books.php"><button type="button" 
                 class="btn btn-outline-dark" ><strong>Back</strong></button></a>
                 Edit Your Data in Book Chapter
           </h2>
@@ -77,14 +77,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if($insert){
         echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
         <strong>Success!</strong> Your data has been inserted successfully.";
-        echo "<a href='./newBookchapter.php'>";
+        echo "<a href='./newbooks.php'>";
         echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       </div></a>";
       }
       if($duplicate){
         echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
         <strong>Warning!</strong> Duplicate entry not allowed.";
-        echo "<a href='./newBookchapter.php'>";
+        echo "<a href='./newbooks.php'>";
         echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       </div></a>";
       
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- form to edit starts -->
     <div class="container my-4">
         <h3>Edit your Info</h3>
-        <form action="./newBookchapter.php" method="post">
+        <form action="./newbooks.php" method="post">
           <div class="mb-3">
             <label for="description" class="form-label"> <h5>Description</h5></label>
             <input type="text" class="form-control" id="description" name="description" required >

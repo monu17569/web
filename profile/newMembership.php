@@ -18,7 +18,6 @@ session_start();
 if(!isset($_SESSION['adminname'])){
   header("Location: ../admin.php");
 }
-
 //Create a conncetion
 $conn = mysqli_connect($servername,$username,$password,$database);
 
@@ -27,17 +26,18 @@ if (!$conn){
   die("Sorry we failed to connect :" .mysqli_connect_error());
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $description = $_POST["description"];
-  $year = $_POST["year"];
-  
+  $organization = $_POST["organization"];
+  $idno = $_POST["idno"];
+
     //  duplicate value check
-  $dup = mysqli_query($conn,"SELECT * FROM bookchapter WHERE Disc='$description'");
+  $dup = mysqli_query($conn,"SELECT * FROM membership WHERE idno='$idno'");
   if(mysqli_num_rows($dup)>0)
   {
+    //echo "This record already existing in database.  ". mysqli_error($conn);
     $duplicate =true;
   }else{
     //Sql query to be executed
-    $sql = "INSERT INTO bookchapter (Disc,years) VALUES ('$description','$year')";
+    $sql = "INSERT INTO membership (organization, idno) VALUES ('$organization' , '$idno')";
     $result = mysqli_query($conn, $sql);
     
     if($result){
@@ -66,9 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
       <!-- Nav bar starts -->
       <div class="alert alert-primary my-2" role="alert">
-          <h2><a href="./bookchapter.php"><button type="button" 
+          <h2><a href="./membership.php"><button type="button" 
                 class="btn btn-outline-dark" ><strong>Back</strong></button></a>
-                Edit Your Data in Book Chapter
+                Edit Your Membership Data
           </h2>
         </div>
       <!-- Nav bar ends -->
@@ -77,14 +77,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if($insert){
         echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
         <strong>Success!</strong> Your data has been inserted successfully.";
-        echo "<a href='./newBookchapter.php'>";
+        echo "<a href='./newMembership.php'>";
         echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       </div></a>";
       }
       if($duplicate){
         echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
         <strong>Warning!</strong> Duplicate entry not allowed.";
-        echo "<a href='./newBookchapter.php'>";
+        echo "<a href='./newMembership.php'>";
         echo "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       </div></a>";
       
@@ -93,15 +93,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- form to edit starts -->
     <div class="container my-4">
         <h3>Edit your Info</h3>
-        <form action="./newBookchapter.php" method="post">
+        <form action="./newMembership.php" method="post">
+
           <div class="mb-3">
-            <label for="description" class="form-label"> <h5>Description</h5></label>
-            <input type="text" class="form-control" id="description" name="description" required >
+            <label for="organization" class="form-label"> <h5>Organization</h5></label>
+            <input type="text" class="form-control" id="organization" name="organization" required>
           </div>
 
           <div class="mb-3">
-            <label for="year" class="form-label"> <h5>Year</h5></label>
-            <input type="text" class="form-control" id="year" name="year" required>
+            <label for="idno" class="form-label"> <h5>Membership Id</h5></label>
+            <input type="text" class="form-control" id="idno" name="idno" required >
           </div>
 
           <button type="submit" class="btn btn-primary my-3"><h5>Submit Info</h5></button>

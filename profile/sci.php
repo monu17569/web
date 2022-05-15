@@ -40,9 +40,10 @@ if (!$conn){
       $id = $_POST['idEdit'];
       $description = $_POST["descriptionEdit"];
       $impactfactor = $_POST["impactfactorEdit"];
+      $year = $_POST["yearEdit"];
 
     // Sql query to be executed
-      $sql = "UPDATE `indexingatsci` SET `Disc` = '$description' , `impactfactor` = '$impactfactor' WHERE `indexingatsci`.`id` = $id";
+      $sql = "UPDATE `indexingatsci` SET `Disc` = '$description' , `impactfactor` = '$impactfactor', `years` = '$year' WHERE `indexingatsci`.`id` = $id";
       $result = mysqli_query($conn, $sql);
       if($result){
         $update = true;
@@ -88,6 +89,11 @@ if (!$conn){
                     <div class="mb-3">
                       <label for="impactfactor" class="form-label"> <h5>Impact Factor</h5></label>
                       <input type="text" class="form-control" id="impactfactorEdit" name="impactfactorEdit" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="year" class="form-label"> <h5>Year</h5></label>
+                      <input type="text" class="form-control" id="yearEdit" name="yearEdit" required>
                     </div>
                     </div>
                   <div class="modal-footer d-block mr-auto">
@@ -137,6 +143,7 @@ if (!$conn){
            <th scope="col">Sl.No.</th>
            <th scope="col">Description</th>
            <th scope="col">Impact Factor</th>
+           <th scope="col">Year</th>
          </tr>
        </thead>
        <tbody>
@@ -150,6 +157,7 @@ if (!$conn){
                          <th scope='row'>".$sno."</th>
                          <td>".$row['Disc']."</td>
                          <td>".$row['impactfactor']."</td>
+                         <td>".$row['years']."</td>
                          <td><button type='button' class='edit btn btn-success' id=".$row['id'].">Update</button></td>
                          <td><button type='button' class='delete btn btn-danger' id=d".$row['id'].">Delete</button></td>
                          </tr>";
@@ -172,9 +180,11 @@ if (!$conn){
        tr = e.target.parentNode.parentNode;
        description = tr.getElementsByTagName("td")[0].innerText;
        impactfactor = tr.getElementsByTagName("td")[1].innerText;
-       console.log(description, impactfactor);
+       year = tr.getElementsByTagName("td")[2].innerText;
+       console.log(description, impactfactor,year);
        descriptionEdit.value = description;
        impactfactorEdit.value = impactfactor;
+       yearEdit.value = year;
        idEdit.value = e.target.id;
        console.log(e.target.id);
        $('#editModal').modal('toggle');
