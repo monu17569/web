@@ -53,9 +53,9 @@
                 Supervision
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">PHD</a></li>
-                <li><a class="dropdown-item" href="#">MCA</a></li>
-                <li><a class="dropdown-item" href="#">MSC</a></li>
+                <li><a class="dropdown-item" href="#phd">PHD</a></li>
+                <li><a class="dropdown-item" href="#mca">MCA</a></li>
+                <li><a class="dropdown-item" href="#msc">MSC</a></li>
               </ul>
             </li>
           </ul>
@@ -116,10 +116,9 @@
                 Projects
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Funded Projects</a></li>
-                <li><a class="dropdown-item" href="#">MCA Major Projects</a></li>
-                <li><a class="dropdown-item" href="#">MSC Minor Projects</a></li>
-                <li><a class="dropdown-item" href="#">MSC Major Projects</a></li>
+                <li><a class="dropdown-item" href="#fundedprojects">Funded Projects</a></li>
+                <li><a class="dropdown-item" href="#mca">MCA Major Projects</a></li>
+                <li><a class="dropdown-item" href="#msc">MSC Minor/Major</a></li>
               </ul>
             </li>
           </ul>
@@ -163,13 +162,27 @@
         <!-- <h4>Below Degree</h4> --> 
         
         <!-- END OF HOMEPAGE INFO -->
-        <!--<h2>2. Qualification  2.1 Degree</h2>-->
-    
-    
+    <h2>2. Education  2.1 Degree</h2>
      <?php 
         include('./dynamic/degree.php');
      ?>
-    <h2>3. Research   </h2>
+     <h4>Below Degree</h4>
+    
+    <h2>3. Supervision  3.1 PHD  3.2 MCA Major  3.3 MSC Major/Minor</h2>
+    <?php
+        include('./dynamic/phd.php');
+    ?>
+    <h4>Below PHD</h4>
+    <?php
+        include('./dynamic/mca.php');
+    ?>
+    <h4>Below MCA </h4>
+    <?php
+        include('./dynamic/msc.php');
+    ?>
+    <h4>Below MSC</h4>
+
+    <h2>4. Research   </h2>
     <?php
         include('./dynamic/indexingAtSCI.php');
     ?>
@@ -196,7 +209,7 @@
     <h4>Below Books</h4>
 
 
-    <h2>4. Teaching  4.1 Subject Expertise  4.2 Experience </h2>
+    <h2>5. Teaching  5.1 Subject Expertise  5.2 Experience </h2>
     <?php
         include('./dynamic/expertise.php');
     ?>
@@ -205,7 +218,7 @@
         include('./dynamic/experience.php');
     ?>
     <h4>Below Experience</h4>
-    <h2>5. Recognition  5.1 Awards  5.2 Workshop 5.3 Reviewer 5.4 FDP  5.5 Membership</h2>
+    <h2>6. Recognition  6.1 Awards  6.2 Workshop 6.3 Reviewer 6.4 FDP  6.5 Membership</h2>
     <?php
         include('./dynamic/awards.php');
     ?>
@@ -226,9 +239,22 @@
         include('./dynamic/membership.php');
     ?>
     <h4>Below membership</h4>
-   
+
+    <h2>7.Projects   7.1 Funded Projects  7.2 MCA Major  7.3 MSC Major/Minor</h2>
+    <?php
+        include('./dynamic/fundedprojects.php');
+    ?>
+    <h4>Below Funded Projects</h4>
+    <?php
+        include('./dynamic/mca.php');
+    ?>
+    <h4>Below MCA Major</h4>
+    <?php
+        include('./dynamic/msc.php');
+    ?>
+    <h4>Below MSC Major/Minor</h4>
     
-    <h2>6.Contact</h2>
+    <h2>8.Contact</h2>
 
      <!--For Counting no of visits--> 
      <script>

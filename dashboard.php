@@ -131,6 +131,29 @@ if(!isset($_SESSION['adminname'])){
                   <div class="card-header"><h4>Membership</h4></div>    
           </div></a>
         </div>
+        <div class="col-lg"><a href="./profile/fundedprojects.php" style="text-decoration: none;">
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">    
+                  <div class="card-header"><h4>Funded Projects</h4></div>    
+          </div></a>
+        </div>
+      </div>
+
+      <div class="row my-5">
+        <div class="col-lg"><a href="./profile/mca.php" style="text-decoration: none;">
+          <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">     
+                  <div class="card-header"><h4>MCA</h4></div>   
+          </div></a>
+        </div>
+        <div class="col-lg"><a href="./profile/msc.php" style="text-decoration: none;">
+          <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">    
+                  <div class="card-header"><h4>MSC</h4></div>    
+          </div></a>
+        </div>
+        <div class="col-lg"><a href="./profile/phd.php" style="text-decoration: none;">
+          <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">    
+                  <div class="card-header"><h4>PHD</h4></div>    
+          </div></a>
+        </div>
       </div>
       
     </div>
