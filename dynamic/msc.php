@@ -49,7 +49,7 @@ if (!$conn){
        </thead>
        <tbody>
                <?php
-                 $sql = "SELECT * FROM `msc`";
+                 $sql = "SELECT * FROM `msc` ORDER BY `id` DESC";
                  $result = mysqli_query($conn, $sql);
                  $sno=0;
                  while($row = mysqli_fetch_assoc($result)){

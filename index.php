@@ -14,6 +14,24 @@
   <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     
   <title>Homepage</title>
+
+  <style type="text/css">
+		.circle {
+			width: 58px;
+			height: 60px;
+			/* padding: 8px 8px; */
+			border-radius: 50px;
+			/* font-size: 15px;
+			text-align: center; */
+		}
+
+    .photo {
+			width: 139px;
+			height: 145px;
+      border-radius: 70px;
+		}
+	</style>
+
 </head>
 <body onload="clicked()">
   
@@ -26,7 +44,7 @@
        $('#myTable').DataTable();
         } );
     </script> -->
-          <!-- Navigation menu starts -->
+    <!-- Navigation menu starts -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Home</a>
@@ -55,7 +73,7 @@
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#phd">PHD</a></li>
                 <li><a class="dropdown-item" href="#mca">MCA</a></li>
-                <li><a class="dropdown-item" href="#msc">MSC</a></li>
+                <li><a class="dropdown-item" href="./dynamic/msc.php">MSC</a></li>
               </ul>
             </li>
           </ul>
@@ -144,117 +162,94 @@
         <!-- HOMEPAGE INFO  -->
         <div class="container py-1 my-2">
           <div class="row align-items-md-stretch">
-              <div class="col-md-4">
-                <div class="p-5 bg-light border rounded-2">
-                  <a href="#">
-                    <img src="./img/img1.jpg" alt="Image">
-                  </a>  
-                </div>
+              <div class="p-4 col-md-2 bg-dark rounded-3">
+                  <!-- <a href="#"> -->
+                    <img src="./img/img1.jpg" alt="Image" class="photo">
+                  <!-- </a>   -->
               </div>
-              <div class="col-md-8">
-                <div class="h-100 p-3 text-white bg-dark rounded-3">
+              <div class="col-md-10 bg-secondary rounded-3">
+                <div class="row align-items-md-stretch">
+                  <div class="col-md-4 text-white">
                   <h2>Dr. Kuldeep Singh</h2>
-                  <p>Assistant Professor <br> Department of Computer Science.<br>University of Delhi</p> 
+                      <p>Assistant Professor <br>
+                          Department of Computer Science.
+                          <br>University of Delhi
+                      </p> 
+                  </div>
+                </div>
+                <div class="row align-items-md-stretch">
+                  <div class="col-md-6"></div>
+                  <div class="col-md-6">
+                  <a href="https://github.com/ksbhan" target="_blank"><img src="./img/github.png" alt="Image" title="Github" class="circle" ></a>
+                  <a href="https://scholar.google.com/citations?user=J0tK1vwAAAAJ&hl=en" target="_blank"><img src="./img/google-scholar.png" alt="Image" title="Google Scholar"class="circle"></a>
+                  <a href="https://orcid.org/my-orcid?orcid=0000-0001-5289-362X" target="_blank"><img src="./img/orcid.jpeg" alt="Image" title="Orcid"class="circle"></a>
+                  <a href="https://www.researchgate.net/profile/Kuldeep-Singh-16" target="_blank"><img src="./img/research-gate.png" alt="Image" title="Research-Gate"class="circle"></a>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=56449820100" target="_blank"><img src="./img/scopus.jpg" alt="Image" title="Scopus" class="circle"></a>
+                  <a href="https://dblp.uni-trier.de/pid/81/4530.html" target="_blank"><img src="./img/dblp.png" alt="Image" title="Dblp"class="circle"></a>
+                  <a href="https://publons.com/researcher/1828270/kuldeep-singh/" target="_blank"><img src="./img/publons.png" alt="Image" title="Publons"class="circle"></a>
+                  </div>
                 </div>
               </div>   
           </div>
         </div>
-        <!-- <h4>Below Degree</h4> --> 
+
+        <div class="container py-1 my-2 border border-success">
+          <div class="col-md-12">
+            <h2>Latest </h2>
+            <marquee  direction="left"  scrollamount="3">
+              <a href="https://www.google.com" target="_blank" style="text-decoration:none">google text.</a>
+            </marquee>
+              <marquee  direction="right"  scrollamount="3">
+              <a href="" target="_blank" style="text-decoration:none">scrolling text.</a>
+            </marquee>
+              <marquee  direction="left"  scrollamount="3">
+              <a href="" target="_blank"  style="text-decoration:none"> scrolling text.</a>
+            </marquee>
+          </div>
+        </div>
+        
+        <div class="container py-1 my-2 border border-success">
+          <div class="col-md-12">
+            <h2>Biography</h2>
+              <i> I am working as Assistant Professor at Department of Computer Science, 
+                  University of Delhi, Delhi-110007, India. I have completed my Ph.D. 
+                  from Indian Institute of Technology (Banaras HinduUniversity) Varanasi. 
+                  My research area includes High Utility Itemsets Mining, Pattern Mining, 
+                  Social Network Analysis, Text Analysis, Influence Maximization and Data Mining.
+              </i>
+          </div>
+        </div>
+
+          <div class="container py-1 my-2 border border-success">
+            <div class="row align-items-md-stretch">
+              <div class="col-md-4">
+                <h2>Contact me</h2>
+                <h3>Official Address:</h3>
+                <p>Department of Computer Science, First Floor, 
+                  Faculty of Mathematical Sciences, Room No . 113, 
+                  Opposite Daulat Ram College, University of Delhi, 
+                  Delhi, 110007</p>
+                <h3>Email id:</h3>
+                <a href="mailto:ksingh@cs.du.ac.in" target="_blank" class="mail" style="text-decoration:none"><p>ksingh@cs.du.ac.in</p></a>
+              </div>
+
+              <div class="col-md-2"></div>
+
+              <div class="col-md-6">
+                <h2></h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.
+                  0532844070144!2d77.20279981739795!3d28.688052634332706!2m3!1f0!2f0!3f0!3m
+                  2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd928daadb91%3A0x76aa925fc6e58347!2s
+                  Department%20of%20Computer%20Science%2C%20University%20of%20Delhi!5e0!3m2!1
+                  sen!2sin!4v1652797182876!5m2!1sen!2sin" width="500" height="245" style="border:
+                  0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
         
         <!-- END OF HOMEPAGE INFO -->
-    <h2>2. Education  2.1 Degree</h2>
-     <?php 
-        include('./dynamic/degree.php');
-     ?>
-     <h4>Below Degree</h4>
     
-    <h2>3. Supervision  3.1 PHD  3.2 MCA Major  3.3 MSC Major/Minor</h2>
-    <?php
-        include('./dynamic/phd.php');
-    ?>
-    <h4>Below PHD</h4>
-    <?php
-        include('./dynamic/mca.php');
-    ?>
-    <h4>Below MCA </h4>
-    <?php
-        include('./dynamic/msc.php');
-    ?>
-    <h4>Below MSC</h4>
-
-    <h2>4. Research   </h2>
-    <?php
-        include('./dynamic/indexingAtSCI.php');
-    ?>
-    <h4>Below Indexing At SCI</h4>
-    <?php
-        include('./dynamic/indexingAtSCOPUS.php');
-    ?>
-    <h4>Below Indexing At SCOPUS</h4>
-    <?php
-        include('./dynamic/referred.php');
-    ?>
-    <h4>Below Referred</h4>
-    <?php
-        include('./dynamic/bookchapter.php');
-    ?>
-    <h4>Below Book Chapter</h4>
-    <?php
-        include('./dynamic/conference.php');
-    ?>
-    <h4>Below COnference</h4>
-    <?php
-        include('./dynamic/books.php');
-    ?>
-    <h4>Below Books</h4>
-
-
-    <h2>5. Teaching  5.1 Subject Expertise  5.2 Experience </h2>
-    <?php
-        include('./dynamic/expertise.php');
-    ?>
-    <h4>Below Expertise</h4>
-    <?php
-        include('./dynamic/experience.php');
-    ?>
-    <h4>Below Experience</h4>
-    <h2>6. Recognition  6.1 Awards  6.2 Workshop 6.3 Reviewer 6.4 FDP  6.5 Membership</h2>
-    <?php
-        include('./dynamic/awards.php');
-    ?>
-    <h4>Below awards</h4>
-    <?php
-        include('./dynamic/workshop.php');
-    ?>
-    <h4>Below workshop</h4>
-    <?php
-        include('./dynamic/reviewer.php');
-    ?>
-    <h4>Below Reviewer</h4>
-    <?php
-        include('./dynamic/fdp.php');
-    ?>
-    <h4>Below FDP</h4>
-    <?php
-        include('./dynamic/membership.php');
-    ?>
-    <h4>Below membership</h4>
-
-    <h2>7.Projects   7.1 Funded Projects  7.2 MCA Major  7.3 MSC Major/Minor</h2>
-    <?php
-        include('./dynamic/fundedprojects.php');
-    ?>
-    <h4>Below Funded Projects</h4>
-    <?php
-        include('./dynamic/mca.php');
-    ?>
-    <h4>Below MCA Major</h4>
-    <?php
-        include('./dynamic/msc.php');
-    ?>
-    <h4>Below MSC Major/Minor</h4>
-    
-    <h2>8.Contact</h2>
 
      <!--For Counting no of visits--> 
      <script>
