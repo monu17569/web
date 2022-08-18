@@ -1,6 +1,7 @@
 * This project consists of 2 levels one is for public view and other is private view(i.e. Admin)
 * It consists of 3 folder namely
-      **1.dynamic --> This contains 18 files which is available on   dropdown menu of    the navbar in Homepage.
+        
+        1.dynamic --> This contains 18 files which is available on   dropdown menu of    the navbar in Homepage.
         
 
         2.img --> This folder contains images which is shown as a clickable links(a hyperlinks) on the Home page .
