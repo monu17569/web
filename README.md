@@ -17,7 +17,9 @@
 
                     Like this same convention for 18 + 18 files which is mentioned as above.
 
-* this project also inclues 6 files namely*
+* This project also inclues 6 files namely
+
+
         1.admin.php --> this is login file for admin it has uername and passwords to get loged in.
 
                   Username and password can be changed from database whatever admin wants.
@@ -48,75 +50,75 @@
                                                                       
 
 
-*for connection to database
+*For connection to database
  you have to make a database name  first 
  and table for all the items which are in dynamic in nature (i.e. 18 tables + 1 for admin in which username and password will be there)
 
- Namely:-
-          1. admin
-                id    adminname   password
-          2. awards
-                id    awardname   Disc
-          3. bookchapter
-                id    Disc    years
-          4. books
-                id    Disc    years
-          5. conference
-                id    Disc    years
-          6. degree
-                id    courseName    universityName    startDate   endDate
-          7. experience
-                id  universityname   designation   Disc    startDate   endDate
-          8. fdp
-                id    topic   duration    organization
-          9. fundedprojects
-                id    title   fundingagency   duration   rol  stat
-          10. indexingatsci
-                id    Disc    impactfactor    years   
-          11. indexingatscopus
-                id    Disc    years
-          12. mca
-                id    names   rollno    title   duration    
-          13. membership
-                id    organization    idno    
-          14. msc
-                id   names    rollno    title   duration    category  
-          15. phd
-                id    names   title   stat    
-          16. referred
-                id    Disc    years
-          17. reviewer
-                id    journal   indexed   publisher    
-          18. subjectexpertise
-                id    subj    perc
-          19. workshop
-                id    organization    topic   startDate   endDate
+                  Namely:-
+                        1. admin
+                              id    adminname   password
+                        2. awards
+                              id    awardname   Disc
+                        3. bookchapter
+                              id    Disc    years
+                        4. books
+                              id    Disc    years
+                        5. conference
+                              id    Disc    years
+                        6. degree
+                              id    courseName    universityName    startDate   endDate
+                        7. experience
+                              id  universityname   designation   Disc    startDate   endDate
+                        8. fdp
+                              id    topic   duration    organization
+                        9. fundedprojects
+                              id    title   fundingagency   duration   rol  stat
+                        10. indexingatsci
+                              id    Disc    impactfactor    years   
+                        11. indexingatscopus
+                              id    Disc    years
+                        12. mca
+                              id    names   rollno    title   duration    
+                        13. membership
+                              id    organization    idno    
+                        14. msc
+                              id   names    rollno    title   duration    category  
+                        15. phd
+                              id    names   title   stat    
+                        16. referred
+                              id    Disc    years
+                        17. reviewer
+                              id    journal   indexed   publisher    
+                        18. subjectexpertise
+                              id    subj    perc
+                        19. workshop
+                              id    organization    topic   startDate   endDate
 
 
 
                 ** In the above scheme i have used status for stat (etc.) because that was a keyword used in SQL therefore, we can't use it .
 
 
-  this is last before complition of this project 👨
+  This is last before complition of this project. 👨
 
     *During  hosting time  we get a  username and password of the database we have  to keep in mind what we have created.
 
     #As belowe you can see below example for localhost database and for production database only servername remains same and username password and database you have to change in all 18 files of  dynamic folder and (18+18) files of profile folder. i.e. totle 54 changes needed to run a project smoothly. 
 
 
- -------Example--------   
+ -          ------Example--------   
                 // for localhost
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $database = "portfolio";
+                //$servername = "localhost";
+                //$username = "root";
+                //$password = "";
+                //$database = "portfolio";
 
 
                 // for production
                 // $servername = "localhost";
-                // $username = "id18903059_root";
-                // $password = "DLIcutTda>1k8fju";
-                // $database = "id18903059_poftfolio";
+                // $username = "i59_root";
+                // $password = "DLItTda>1k8fju";
+                // $database = "id19_poftfolio";
 
 
 Thankyou.
