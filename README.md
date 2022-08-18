@@ -1,6 +1,6 @@
 * This project consists of 2 levels one is for public view and other is private view(i.e. Admin)
 * It consists of 3 folder namely
-        1.dynamic --> This contains 18 files which is available on   dropdown menu of    the navbar in Homepage.
+      **1.dynamic --> This contains 18 files which is available on   dropdown menu of    the navbar in Homepage.
         
 
         2.img --> This folder contains images which is shown as a clickable links(a hyperlinks) on the Home page .
@@ -16,7 +16,7 @@
 
                     Like this same convention for 18 + 18 files which is mentioned as above.
 
-* this project aldo inclues 6 files namely
+* this project also inclues 6 files namely*
         1.admin.php --> this is login file for admin it has uername and passwords to get loged in.
 
                   Username and password can be changed from database whatever admin wants.
