@@ -50,7 +50,7 @@
                                                                       
 
 
-*For connection to database
+* For connection to database
  you have to make a database name  first 
  and table for all the items which are in dynamic in nature (i.e. 18 tables + 1 for admin in which username and password will be there)
 
@@ -96,7 +96,7 @@
 
 
 
-                ** In the above scheme i have used status for stat (etc.) because that was a keyword used in SQL therefore, we can't use it .
+* In the above scheme i have used status for stat (etc.) because that was a keyword used in SQL therefore, we can't use it .
 
 
   This is last before complition of this project. 👨
@@ -106,7 +106,7 @@
     #As belowe you can see below example for localhost database and for production database only servername remains same and username password and database you have to change in all 18 files of  dynamic folder and (18+18) files of profile folder. i.e. totle 54 changes needed to run a project smoothly. 
 
 
- -          ------Example--------   
+ *          ------Example--------   
                 // for localhost
                 //$servername = "localhost";
                 //$username = "root";
