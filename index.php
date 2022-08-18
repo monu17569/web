@@ -15,35 +15,10 @@
     
   <title>Homepage</title>
 
-  <style type="text/css">
-		.circle {
-			width: 58px;
-			height: 60px;
-			/* padding: 8px 8px; */
-			border-radius: 50px;
-			/* font-size: 15px;
-			text-align: center; */
-		}
-
-    .photo {
-			width: 139px;
-			height: 145px;
-      border-radius: 70px;
-		}
-	</style>
-
 </head>
-<body onload="clicked()">
+
+<body onload="clicked()" >
   
-  
-    <!-- importing degree.php -->
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script>
-      $(document).ready( function () {
-       $('#myTable').DataTable();
-        } );
-    </script> -->
     <!-- Navigation menu starts -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
       <div class="container-fluid">
@@ -51,6 +26,15 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- <div class="collapse navbar-collapse" id="navbarNavDark">
+          <ul class="navbar-nav">
+              <a class="nav-link toggle" href="#"  role="button"  aria-expanded="false">
+                Home
+              </a>
+          </ul>
+        </div> -->
+
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -58,7 +42,7 @@
                 Education
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#degree">Degree</a></li>
+                <li><a class="dropdown-item" href="./dynamic/degree.php">Degree</a></li>
               </ul>
             </li>
           </ul>
@@ -71,8 +55,8 @@
                 Supervision
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#phd">PHD</a></li>
-                <li><a class="dropdown-item" href="#mca">MCA</a></li>
+                <li><a class="dropdown-item" href="./dynamic/phd.php">PHD</a></li>
+                <li><a class="dropdown-item" href="./dynamic/mca.php">MCA</a></li>
                 <li><a class="dropdown-item" href="./dynamic/msc.php">MSC</a></li>
               </ul>
             </li>
@@ -86,12 +70,12 @@
                 Research
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#indexingatsci">Journal(Indexing in SCI)</a></li>
-                <li><a class="dropdown-item" href="#indexingatscopus">Journal (Indexing in SCOPUS)</a></li>
-                <li><a class="dropdown-item" href="#referred">Journal Referred</a></li>
-                <li><a class="dropdown-item" href="#conference">Conference</a></li>
-                <li><a class="dropdown-item" href="#bookchapter">Book Chapter</a></li>
-                <li><a class="dropdown-item" href="#books">Books</a></li>
+                <li><a class="dropdown-item" href="./dynamic/indexingAtSCI.php">Journal(Indexing in SCI)</a></li>
+                <li><a class="dropdown-item" href="./dynamic/indexingAtSCOPUS.php">Journal (Indexing in SCOPUS)</a></li>
+                <li><a class="dropdown-item" href="./dynamic/referred.php">Journal Referred</a></li>
+                <li><a class="dropdown-item" href="./dynamic/conference.php">Conference</a></li>
+                <li><a class="dropdown-item" href="./dynamic/bookchapter.php">Book Chapter</a></li>
+                <li><a class="dropdown-item" href="./dynamic/books.php">Books</a></li>
               </ul>
             </li>
           </ul>
@@ -103,9 +87,9 @@
                 Teaching
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#expertise">Subject Expertise</a></li>
-                <li><a class="dropdown-item" href="#experience">Experience</a></li>
-                <li><a class="dropdown-item" href="#experience">Teaching Experience</a></li>
+                <li><a class="dropdown-item" href="./dynamic/expertise.php">Subject Expertise</a></li>
+                <!-- <li><a class="dropdown-item" href="./dynamic/experience.">Experience</a></li> -->
+                <li><a class="dropdown-item" href="./dynamic/experience.php">Teaching Experience</a></li>
                 <li><a class="dropdown-item" href="#experience">Adminstrative Experience</a></li>
               </ul>
             </li>
@@ -118,11 +102,11 @@
               Recognition
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#awards">Awards/Fellowship/Grants</a></li>
-                <li><a class="dropdown-item" href="#workshop">Workshop</a></li>
-                <li><a class="dropdown-item" href="#reviewer">Reviewer</a></li>
-                <li><a class="dropdown-item" href="#fdp">FDP(Faculty Development Program)</a></li>
-                <li><a class="dropdown-item" href="#membership">Membership</a></li>
+                <li><a class="dropdown-item" href="./dynamic/awards.php">Awards/Fellowship/Grants</a></li>
+                <li><a class="dropdown-item" href="./dynamic/workshop.php">Workshop</a></li>
+                <li><a class="dropdown-item" href="./dynamic/reviewer.php">Reviewer</a></li>
+                <li><a class="dropdown-item" href="./dynamic/fdp.php">FDP(Faculty Development Program)</a></li>
+                <li><a class="dropdown-item" href="./dynamic/membership.php">Membership</a></li>
               </ul>
             </li>
           </ul>
@@ -134,9 +118,9 @@
                 Projects
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#fundedprojects">Funded Projects</a></li>
-                <li><a class="dropdown-item" href="#mca">MCA Major Projects</a></li>
-                <li><a class="dropdown-item" href="#msc">MSC Minor/Major</a></li>
+                <li><a class="dropdown-item" href="./dynamic/fundedprojects.php">Funded Projects</a></li>
+                <li><a class="dropdown-item" href="./dynamic/mca.php">MCA Major Projects</a></li>
+                <li><a class="dropdown-item" href="./dynamic/msc.php">MSC Minor/Major</a></li>
               </ul>
             </li>
           </ul>
@@ -177,6 +161,7 @@
                       </p> 
                   </div>
                 </div>
+                <!-- Links starts -->
                 <div class="row align-items-md-stretch">
                   <div class="col-md-6"></div>
                   <div class="col-md-6">
@@ -189,26 +174,30 @@
                   <a href="https://publons.com/researcher/1828270/kuldeep-singh/" target="_blank"><img src="./img/publons.png" alt="Image" title="Publons"class="circle"></a>
                   </div>
                 </div>
+                <!-- End of Links -->
               </div>   
           </div>
         </div>
-
-        <div class="container py-1 my-2 border border-success">
+    <!--  Latest  -->
+        <div class="container py-1 my-2 border border-success rounded-3">
           <div class="col-md-12">
             <h2>Latest </h2>
-            <marquee  direction="left"  scrollamount="3">
-              <a href="https://www.google.com" target="_blank" style="text-decoration:none">google text.</a>
+            <marquee direction="left"  scrollamount="3">
+              <a href="https://www.google.com" target="_blank" style="text-decoration:none">Internal Marks</a>
             </marquee>
               <marquee  direction="right"  scrollamount="3">
-              <a href="" target="_blank" style="text-decoration:none">scrolling text.</a>
+              <a href="" target="_blank" style="text-decoration:none">Phd funded Projects</a>
             </marquee>
               <marquee  direction="left"  scrollamount="3">
-              <a href="" target="_blank"  style="text-decoration:none"> scrolling text.</a>
+              <a href="" target="_blank"  style="text-decoration:none">Minor Projects </a>
             </marquee>
           </div>
         </div>
+
+        <!-- Latest Ends -->
         
-        <div class="container py-1 my-2 border border-success">
+        <!-- Biograpgy starts -->
+        <div class="container py-1 my-2 border border-success rounded-3">
           <div class="col-md-12">
             <h2>Biography</h2>
               <i> I am working as Assistant Professor at Department of Computer Science, 
@@ -219,9 +208,11 @@
               </i>
           </div>
         </div>
+        <!-- End of Biography -->
 
-          <div class="container py-1 my-2 border border-success">
+          <div class="container py-1 my-2 border border-success rounded-3">
             <div class="row align-items-md-stretch">
+              <!-- Contact me starts -->
               <div class="col-md-4">
                 <h2>Contact me</h2>
                 <h3>Official Address:</h3>
@@ -232,18 +223,25 @@
                 <h3>Email id:</h3>
                 <a href="mailto:ksingh@cs.du.ac.in" target="_blank" class="mail" style="text-decoration:none"><p>ksingh@cs.du.ac.in</p></a>
               </div>
+              <!-- End of Contact me -->
 
               <div class="col-md-2"></div>
 
               <div class="col-md-6">
                 <h2></h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.
-                  0532844070144!2d77.20279981739795!3d28.688052634332706!2m3!1f0!2f0!3f0!3m
-                  2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd928daadb91%3A0x76aa925fc6e58347!2s
-                  Department%20of%20Computer%20Science%2C%20University%20of%20Delhi!5e0!3m2!1
-                  sen!2sin!4v1652797182876!5m2!1sen!2sin" width="500" height="245" style="border:
-                  0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+
+                
+
+                <!--Google map-->
+                <div id="map-container-google-1" class="z-depth-1-half map-container" >
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.
+                                  0532844070144!2d77.20279981739795!3d28.688052634332706!2m3!1f0!2f0!3f0!3m
+                                  2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd928daadb91%3A0x76aa925fc6e58347!2s
+                                  Department%20of%20Computer%20Science%2C%20University%20of%20Delhi!5e0!3m2!1
+                                  sen!2sin!4v1652797182876!5m2!1sen!2sin" frameborder="0"
+                     ></iframe>
+                </div>
+              <!--End of Google Maps -->
               </div>
             </div>
           </div>
@@ -267,13 +265,15 @@
         }
     </script>
 
+        <!-- footer -->
      <div class="card text-center">
               <div class="card-footer">
-               <strong> &copy 2022 No. of visits : <span id="visit"></span> </strong>
+               <strong> &copy <?php echo date("Y");?> No. of visits : <span id="visit"></span> </strong>
               </div>
      </div>
+     <!-- footer Ends -->
 
-</div>
+  </div>
 
 
      <!-- Optional JavaScript; choose one of the two! -->
