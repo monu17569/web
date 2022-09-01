@@ -81,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 			// echo "<script language='javascript'>";
 			// echo "alert('WRONG Adminname or Password')";
 			// echo "</script>";
+			
 			// die();
 		}
 }

@@ -117,7 +117,7 @@
                 // for production
                 // $servername = "localhost";
                 // $username = "i59_root";
-                // $password = "DLItTda>1k8fju";
+                // $password = "DLIghfhfa>1k8fju";
                 // $database = "id19_poftfolio";
 
 
